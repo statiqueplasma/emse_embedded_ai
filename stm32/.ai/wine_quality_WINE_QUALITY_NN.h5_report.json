@@ -1,7 +1,7 @@
 {
     "_allocate_inputs": 4,
     "_allocate_outputs": 4,
-    "cli_parameters": "generate --name wine_quality -m C:/Users/walid/Downloads/WINE_QUALITY_NN.h5 --type keras --compression none --verbosity 1 --workspace C:\\Users\\walid\\AppData\\Local\\Temp\\mxAI_workspace16920732595860016374782321918238577 --output C:\\Users\\walid\\.stm32cubemx\\wine_quality_output --allocate-inputs --series stm32l4 --allocate-outputs",
+    "cli_parameters": "generate --name wine_quality -m C:/Users/walid/Downloads/WINE_QUALITY_NN.h5 --type keras --compression none --verbosity 1 --workspace C:\\Users\\walid\\AppData\\Local\\Temp\\mxAI_workspace17049070414110010241274529698507458 --output C:\\Users\\walid\\.stm32cubemx\\wine_quality_output --allocate-inputs --series stm32l4 --allocate-outputs",
     "cli_version": {
         "major": 1,
         "micro": 0,
@@ -13,7 +13,7 @@
         "factor": null,
         "layers": {}
     },
-    "date_time": "Mon Sep 25 11:03:48 2023",
+    "date_time": "Mon Sep 25 11:25:11 2023",
     "error": 0,
     "error_str": [],
     "exec_cmd": "generate",

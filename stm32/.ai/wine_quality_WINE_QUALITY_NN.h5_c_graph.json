@@ -606,7 +606,7 @@
         }
     ],
     "c_activations_count": 1,
-    "date_time": "Mon Sep 25 11:03:48 2023",
+    "date_time": "Mon Sep 25 11:25:11 2023",
     "model_name": "wine_quality_nn",
     "tool_version": {
         "major": 1,
