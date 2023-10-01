@@ -209,10 +209,42 @@ void MX_X_CUBE_AI_Process(void)
 {
     /* USER CODE BEGIN 6 */
   int res = -1;
-
+  uint8_t *in_data = NULL;
+  uint8_t *out_data = NULL;
   printf("TEMPLATE - run - main loop\r\n");
 
   if (wine_quality) {
+  // set pointer on NN buffer
+	#if defined(AI_MNIST_INPUTS_IN_ACTIVATIONS)
+	 in_data = ai_input[0].data;
+
+	#endif
+
+	#if defined(AI_MNIST_OUTPUTS_IN_ACTIVATIONS)
+
+	  out_data = ai_output[0].data;
+
+	#endif
+
+	  /* TO MODIFY -> 0 - Synchronisation with Python Script */
+	unsigned char ack[4] = "0000";
+	unsigned char return_ack[3] = "101";
+	uint8_t sync = 0;
+	uint8_t ack_received = 0;
+
+// Synchronisation loop
+	while(sync == 0){
+	  while(ack_received != 1){
+		  HAL_UART_Receive(&huart2, (uint8_t *) ack, sizeof(ack), 100);
+		  if ((ack[0] == 's') && (ack[1] == 'y') && (ack[2] == 'n') && (ack[3] == 'c')){
+			  ack_received = 1;
+		  }
+		  HAL_UART_Transmit(&huart2, (uint8_t *) return_ack, sizeof(return_ack), 100);
+		  sync = 1;
+	  }
+	}
+
+	data_ins[0] = 0x7;
 
     do {
       /* 1 - acquire and pre-process input data */
