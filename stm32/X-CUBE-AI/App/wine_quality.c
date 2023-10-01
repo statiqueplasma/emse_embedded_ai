@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file    wine_quality.c
   * @author  AST Embedded Analytics Research Platform
-  * @date    Mon Sep 25 11:25:11 2023
+  * @date    Sun Oct  1 18:34:13 2023
   * @brief   AI Tool Automatic Code Generator for Embedded NN computing
   ******************************************************************************
   * @attention
@@ -35,14 +35,14 @@
 #define AI_NET_OBJ_INSTANCE g_wine_quality
  
 #undef AI_WINE_QUALITY_MODEL_SIGNATURE
-#define AI_WINE_QUALITY_MODEL_SIGNATURE     "6deb76158a7197eff05c1d7090116643"
+#define AI_WINE_QUALITY_MODEL_SIGNATURE     "0b377b34643d6f3fff76ac78165291fe"
 
 #ifndef AI_TOOLS_REVISION_ID
 #define AI_TOOLS_REVISION_ID     ""
 #endif
 
 #undef AI_TOOLS_DATE_TIME
-#define AI_TOOLS_DATE_TIME   "Mon Sep 25 11:25:11 2023"
+#define AI_TOOLS_DATE_TIME   "Sun Oct  1 18:34:13 2023"
 
 #undef AI_TOOLS_COMPILE_TIME
 #define AI_TOOLS_COMPILE_TIME    __DATE__ " " __TIME__
@@ -62,67 +62,67 @@ AI_ARRAY_OBJ_DECLARE(
   NULL, NULL, 8, AI_STATIC)
 /* Array#1 */
 AI_ARRAY_OBJ_DECLARE(
-  dense_14_dense_bias_array, AI_ARRAY_FORMAT_FLOAT,
+  dense_2_dense_bias_array, AI_ARRAY_FORMAT_FLOAT,
   NULL, NULL, 32, AI_STATIC)
 /* Array#2 */
 AI_ARRAY_OBJ_DECLARE(
-  dense_12_dense_output_array, AI_ARRAY_FORMAT_FLOAT,
+  dense_dense_output_array, AI_ARRAY_FORMAT_FLOAT,
   NULL, NULL, 192, AI_STATIC)
 /* Array#3 */
 AI_ARRAY_OBJ_DECLARE(
-  dense_12_output_array, AI_ARRAY_FORMAT_FLOAT,
+  dense_output_array, AI_ARRAY_FORMAT_FLOAT,
   NULL, NULL, 192, AI_STATIC)
 /* Array#4 */
 AI_ARRAY_OBJ_DECLARE(
-  dense_15_dense_weights_array, AI_ARRAY_FORMAT_FLOAT,
+  dense_3_dense_weights_array, AI_ARRAY_FORMAT_FLOAT,
   NULL, NULL, 224, AI_STATIC)
 /* Array#5 */
 AI_ARRAY_OBJ_DECLARE(
-  dense_13_dense_output_array, AI_ARRAY_FORMAT_FLOAT,
+  dense_1_dense_output_array, AI_ARRAY_FORMAT_FLOAT,
   NULL, NULL, 96, AI_STATIC)
 /* Array#6 */
 AI_ARRAY_OBJ_DECLARE(
-  dense_15_dense_bias_array, AI_ARRAY_FORMAT_FLOAT,
+  dense_3_dense_bias_array, AI_ARRAY_FORMAT_FLOAT,
   NULL, NULL, 7, AI_STATIC)
 /* Array#7 */
 AI_ARRAY_OBJ_DECLARE(
-  dense_13_output_array, AI_ARRAY_FORMAT_FLOAT,
+  dense_1_output_array, AI_ARRAY_FORMAT_FLOAT,
   NULL, NULL, 96, AI_STATIC)
 /* Array#8 */
 AI_ARRAY_OBJ_DECLARE(
-  dense_14_dense_output_array, AI_ARRAY_FORMAT_FLOAT,
+  dense_2_dense_output_array, AI_ARRAY_FORMAT_FLOAT,
   NULL, NULL, 32, AI_STATIC)
 /* Array#9 */
 AI_ARRAY_OBJ_DECLARE(
-  dense_14_output_array, AI_ARRAY_FORMAT_FLOAT,
+  dense_2_output_array, AI_ARRAY_FORMAT_FLOAT,
   NULL, NULL, 32, AI_STATIC)
 /* Array#10 */
 AI_ARRAY_OBJ_DECLARE(
-  dense_15_dense_output_array, AI_ARRAY_FORMAT_FLOAT,
+  dense_3_dense_output_array, AI_ARRAY_FORMAT_FLOAT,
   NULL, NULL, 7, AI_STATIC)
 /* Array#11 */
 AI_ARRAY_OBJ_DECLARE(
-  activation_3_output_array, AI_ARRAY_FORMAT_FLOAT|AI_FMT_FLAG_IS_IO,
+  activation_output_array, AI_ARRAY_FORMAT_FLOAT|AI_FMT_FLAG_IS_IO,
   NULL, NULL, 7, AI_STATIC)
 /* Array#12 */
 AI_ARRAY_OBJ_DECLARE(
-  dense_12_dense_weights_array, AI_ARRAY_FORMAT_FLOAT,
+  dense_dense_weights_array, AI_ARRAY_FORMAT_FLOAT,
   NULL, NULL, 1536, AI_STATIC)
 /* Array#13 */
 AI_ARRAY_OBJ_DECLARE(
-  dense_12_dense_bias_array, AI_ARRAY_FORMAT_FLOAT,
+  dense_dense_bias_array, AI_ARRAY_FORMAT_FLOAT,
   NULL, NULL, 192, AI_STATIC)
 /* Array#14 */
 AI_ARRAY_OBJ_DECLARE(
-  dense_13_dense_weights_array, AI_ARRAY_FORMAT_FLOAT,
+  dense_1_dense_weights_array, AI_ARRAY_FORMAT_FLOAT,
   NULL, NULL, 18432, AI_STATIC)
 /* Array#15 */
 AI_ARRAY_OBJ_DECLARE(
-  dense_13_dense_bias_array, AI_ARRAY_FORMAT_FLOAT,
+  dense_1_dense_bias_array, AI_ARRAY_FORMAT_FLOAT,
   NULL, NULL, 96, AI_STATIC)
 /* Array#16 */
 AI_ARRAY_OBJ_DECLARE(
-  dense_14_dense_weights_array, AI_ARRAY_FORMAT_FLOAT,
+  dense_2_dense_weights_array, AI_ARRAY_FORMAT_FLOAT,
   NULL, NULL, 3072, AI_STATIC)
 /**  Tensor declarations section  *********************************************/
 /* Tensor #0 */
@@ -134,115 +134,115 @@ AI_TENSOR_OBJ_DECLARE(
 
 /* Tensor #1 */
 AI_TENSOR_OBJ_DECLARE(
-  dense_14_dense_bias, AI_STATIC,
+  dense_2_dense_bias, AI_STATIC,
   1, 0x0,
   AI_SHAPE_INIT(4, 1, 32, 1, 1), AI_STRIDE_INIT(4, 4, 4, 128, 128),
-  1, &dense_14_dense_bias_array, NULL)
+  1, &dense_2_dense_bias_array, NULL)
 
 /* Tensor #2 */
 AI_TENSOR_OBJ_DECLARE(
-  dense_12_dense_output, AI_STATIC,
+  dense_dense_output, AI_STATIC,
   2, 0x0,
   AI_SHAPE_INIT(4, 1, 192, 1, 1), AI_STRIDE_INIT(4, 4, 4, 768, 768),
-  1, &dense_12_dense_output_array, NULL)
+  1, &dense_dense_output_array, NULL)
 
 /* Tensor #3 */
 AI_TENSOR_OBJ_DECLARE(
-  dense_12_output, AI_STATIC,
+  dense_output, AI_STATIC,
   3, 0x0,
   AI_SHAPE_INIT(4, 1, 192, 1, 1), AI_STRIDE_INIT(4, 4, 4, 768, 768),
-  1, &dense_12_output_array, NULL)
+  1, &dense_output_array, NULL)
 
 /* Tensor #4 */
 AI_TENSOR_OBJ_DECLARE(
-  dense_15_dense_weights, AI_STATIC,
+  dense_3_dense_weights, AI_STATIC,
   4, 0x0,
   AI_SHAPE_INIT(4, 32, 7, 1, 1), AI_STRIDE_INIT(4, 4, 128, 896, 896),
-  1, &dense_15_dense_weights_array, NULL)
+  1, &dense_3_dense_weights_array, NULL)
 
 /* Tensor #5 */
 AI_TENSOR_OBJ_DECLARE(
-  dense_13_dense_output, AI_STATIC,
+  dense_1_dense_output, AI_STATIC,
   5, 0x0,
   AI_SHAPE_INIT(4, 1, 96, 1, 1), AI_STRIDE_INIT(4, 4, 4, 384, 384),
-  1, &dense_13_dense_output_array, NULL)
+  1, &dense_1_dense_output_array, NULL)
 
 /* Tensor #6 */
 AI_TENSOR_OBJ_DECLARE(
-  dense_15_dense_bias, AI_STATIC,
+  dense_3_dense_bias, AI_STATIC,
   6, 0x0,
   AI_SHAPE_INIT(4, 1, 7, 1, 1), AI_STRIDE_INIT(4, 4, 4, 28, 28),
-  1, &dense_15_dense_bias_array, NULL)
+  1, &dense_3_dense_bias_array, NULL)
 
 /* Tensor #7 */
 AI_TENSOR_OBJ_DECLARE(
-  dense_13_output, AI_STATIC,
+  dense_1_output, AI_STATIC,
   7, 0x0,
   AI_SHAPE_INIT(4, 1, 96, 1, 1), AI_STRIDE_INIT(4, 4, 4, 384, 384),
-  1, &dense_13_output_array, NULL)
+  1, &dense_1_output_array, NULL)
 
 /* Tensor #8 */
 AI_TENSOR_OBJ_DECLARE(
-  dense_14_dense_output, AI_STATIC,
+  dense_2_dense_output, AI_STATIC,
   8, 0x0,
   AI_SHAPE_INIT(4, 1, 32, 1, 1), AI_STRIDE_INIT(4, 4, 4, 128, 128),
-  1, &dense_14_dense_output_array, NULL)
+  1, &dense_2_dense_output_array, NULL)
 
 /* Tensor #9 */
 AI_TENSOR_OBJ_DECLARE(
-  dense_14_output, AI_STATIC,
+  dense_2_output, AI_STATIC,
   9, 0x0,
   AI_SHAPE_INIT(4, 1, 32, 1, 1), AI_STRIDE_INIT(4, 4, 4, 128, 128),
-  1, &dense_14_output_array, NULL)
+  1, &dense_2_output_array, NULL)
 
 /* Tensor #10 */
 AI_TENSOR_OBJ_DECLARE(
-  dense_15_dense_output, AI_STATIC,
+  dense_3_dense_output, AI_STATIC,
   10, 0x0,
   AI_SHAPE_INIT(4, 1, 7, 1, 1), AI_STRIDE_INIT(4, 4, 4, 28, 28),
-  1, &dense_15_dense_output_array, NULL)
+  1, &dense_3_dense_output_array, NULL)
 
 /* Tensor #11 */
 AI_TENSOR_OBJ_DECLARE(
-  activation_3_output, AI_STATIC,
+  activation_output, AI_STATIC,
   11, 0x0,
   AI_SHAPE_INIT(4, 1, 7, 1, 1), AI_STRIDE_INIT(4, 4, 4, 28, 28),
-  1, &activation_3_output_array, NULL)
+  1, &activation_output_array, NULL)
 
 /* Tensor #12 */
 AI_TENSOR_OBJ_DECLARE(
-  dense_12_dense_weights, AI_STATIC,
+  dense_dense_weights, AI_STATIC,
   12, 0x0,
   AI_SHAPE_INIT(4, 8, 192, 1, 1), AI_STRIDE_INIT(4, 4, 32, 6144, 6144),
-  1, &dense_12_dense_weights_array, NULL)
+  1, &dense_dense_weights_array, NULL)
 
 /* Tensor #13 */
 AI_TENSOR_OBJ_DECLARE(
-  dense_12_dense_bias, AI_STATIC,
+  dense_dense_bias, AI_STATIC,
   13, 0x0,
   AI_SHAPE_INIT(4, 1, 192, 1, 1), AI_STRIDE_INIT(4, 4, 4, 768, 768),
-  1, &dense_12_dense_bias_array, NULL)
+  1, &dense_dense_bias_array, NULL)
 
 /* Tensor #14 */
 AI_TENSOR_OBJ_DECLARE(
-  dense_13_dense_weights, AI_STATIC,
+  dense_1_dense_weights, AI_STATIC,
   14, 0x0,
   AI_SHAPE_INIT(4, 192, 96, 1, 1), AI_STRIDE_INIT(4, 4, 768, 73728, 73728),
-  1, &dense_13_dense_weights_array, NULL)
+  1, &dense_1_dense_weights_array, NULL)
 
 /* Tensor #15 */
 AI_TENSOR_OBJ_DECLARE(
-  dense_13_dense_bias, AI_STATIC,
+  dense_1_dense_bias, AI_STATIC,
   15, 0x0,
   AI_SHAPE_INIT(4, 1, 96, 1, 1), AI_STRIDE_INIT(4, 4, 4, 384, 384),
-  1, &dense_13_dense_bias_array, NULL)
+  1, &dense_1_dense_bias_array, NULL)
 
 /* Tensor #16 */
 AI_TENSOR_OBJ_DECLARE(
-  dense_14_dense_weights, AI_STATIC,
+  dense_2_dense_weights, AI_STATIC,
   16, 0x0,
   AI_SHAPE_INIT(4, 96, 32, 1, 1), AI_STRIDE_INIT(4, 4, 384, 12288, 12288),
-  1, &dense_14_dense_weights_array, NULL)
+  1, &dense_2_dense_weights_array, NULL)
 
 
 
@@ -250,135 +250,135 @@ AI_TENSOR_OBJ_DECLARE(
 
 
 AI_TENSOR_CHAIN_OBJ_DECLARE(
-  activation_3_chain, AI_STATIC_CONST, 4,
-  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &dense_15_dense_output),
-  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &activation_3_output),
+  activation_chain, AI_STATIC_CONST, 4,
+  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &dense_3_dense_output),
+  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &activation_output),
   AI_TENSOR_LIST_OBJ_EMPTY,
   AI_TENSOR_LIST_OBJ_EMPTY
 )
 
 AI_LAYER_OBJ_DECLARE(
-  activation_3_layer, 4,
+  activation_layer, 4,
   NL_TYPE, 0x0, NULL,
   nl, forward_sm,
-  &activation_3_chain,
-  NULL, &activation_3_layer, AI_STATIC, 
+  &activation_chain,
+  NULL, &activation_layer, AI_STATIC, 
   .nl_params = NULL, 
 )
 
 AI_TENSOR_CHAIN_OBJ_DECLARE(
-  dense_15_dense_chain, AI_STATIC_CONST, 4,
-  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &dense_14_output),
-  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &dense_15_dense_output),
-  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 2, &dense_15_dense_weights, &dense_15_dense_bias),
+  dense_3_dense_chain, AI_STATIC_CONST, 4,
+  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &dense_2_output),
+  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &dense_3_dense_output),
+  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 2, &dense_3_dense_weights, &dense_3_dense_bias),
   AI_TENSOR_LIST_OBJ_EMPTY
 )
 
 AI_LAYER_OBJ_DECLARE(
-  dense_15_dense_layer, 3,
+  dense_3_dense_layer, 3,
   DENSE_TYPE, 0x0, NULL,
   dense, forward_dense,
-  &dense_15_dense_chain,
-  NULL, &activation_3_layer, AI_STATIC, 
+  &dense_3_dense_chain,
+  NULL, &activation_layer, AI_STATIC, 
 )
 
 AI_TENSOR_CHAIN_OBJ_DECLARE(
-  dense_14_chain, AI_STATIC_CONST, 4,
-  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &dense_14_dense_output),
-  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &dense_14_output),
+  dense_2_chain, AI_STATIC_CONST, 4,
+  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &dense_2_dense_output),
+  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &dense_2_output),
   AI_TENSOR_LIST_OBJ_EMPTY,
   AI_TENSOR_LIST_OBJ_EMPTY
 )
 
 AI_LAYER_OBJ_DECLARE(
-  dense_14_layer, 2,
+  dense_2_layer, 2,
   NL_TYPE, 0x0, NULL,
   nl, forward_relu,
-  &dense_14_chain,
-  NULL, &dense_15_dense_layer, AI_STATIC, 
+  &dense_2_chain,
+  NULL, &dense_3_dense_layer, AI_STATIC, 
   .nl_params = NULL, 
 )
 
 AI_TENSOR_CHAIN_OBJ_DECLARE(
-  dense_14_dense_chain, AI_STATIC_CONST, 4,
-  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &dense_13_output),
-  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &dense_14_dense_output),
-  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 2, &dense_14_dense_weights, &dense_14_dense_bias),
+  dense_2_dense_chain, AI_STATIC_CONST, 4,
+  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &dense_1_output),
+  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &dense_2_dense_output),
+  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 2, &dense_2_dense_weights, &dense_2_dense_bias),
   AI_TENSOR_LIST_OBJ_EMPTY
 )
 
 AI_LAYER_OBJ_DECLARE(
-  dense_14_dense_layer, 2,
+  dense_2_dense_layer, 2,
   DENSE_TYPE, 0x0, NULL,
   dense, forward_dense,
-  &dense_14_dense_chain,
-  NULL, &dense_14_layer, AI_STATIC, 
+  &dense_2_dense_chain,
+  NULL, &dense_2_layer, AI_STATIC, 
 )
 
 AI_TENSOR_CHAIN_OBJ_DECLARE(
-  dense_13_chain, AI_STATIC_CONST, 4,
-  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &dense_13_dense_output),
-  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &dense_13_output),
+  dense_1_chain, AI_STATIC_CONST, 4,
+  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &dense_1_dense_output),
+  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &dense_1_output),
   AI_TENSOR_LIST_OBJ_EMPTY,
   AI_TENSOR_LIST_OBJ_EMPTY
 )
 
 AI_LAYER_OBJ_DECLARE(
-  dense_13_layer, 1,
+  dense_1_layer, 1,
   NL_TYPE, 0x0, NULL,
   nl, forward_relu,
-  &dense_13_chain,
-  NULL, &dense_14_dense_layer, AI_STATIC, 
+  &dense_1_chain,
+  NULL, &dense_2_dense_layer, AI_STATIC, 
   .nl_params = NULL, 
 )
 
 AI_TENSOR_CHAIN_OBJ_DECLARE(
-  dense_13_dense_chain, AI_STATIC_CONST, 4,
-  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &dense_12_output),
-  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &dense_13_dense_output),
-  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 2, &dense_13_dense_weights, &dense_13_dense_bias),
+  dense_1_dense_chain, AI_STATIC_CONST, 4,
+  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &dense_output),
+  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &dense_1_dense_output),
+  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 2, &dense_1_dense_weights, &dense_1_dense_bias),
   AI_TENSOR_LIST_OBJ_EMPTY
 )
 
 AI_LAYER_OBJ_DECLARE(
-  dense_13_dense_layer, 1,
+  dense_1_dense_layer, 1,
   DENSE_TYPE, 0x0, NULL,
   dense, forward_dense,
-  &dense_13_dense_chain,
-  NULL, &dense_13_layer, AI_STATIC, 
+  &dense_1_dense_chain,
+  NULL, &dense_1_layer, AI_STATIC, 
 )
 
 AI_TENSOR_CHAIN_OBJ_DECLARE(
-  dense_12_chain, AI_STATIC_CONST, 4,
-  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &dense_12_dense_output),
-  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &dense_12_output),
+  dense_chain, AI_STATIC_CONST, 4,
+  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &dense_dense_output),
+  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &dense_output),
   AI_TENSOR_LIST_OBJ_EMPTY,
   AI_TENSOR_LIST_OBJ_EMPTY
 )
 
 AI_LAYER_OBJ_DECLARE(
-  dense_12_layer, 0,
+  dense_layer, 0,
   NL_TYPE, 0x0, NULL,
   nl, forward_relu,
-  &dense_12_chain,
-  NULL, &dense_13_dense_layer, AI_STATIC, 
+  &dense_chain,
+  NULL, &dense_1_dense_layer, AI_STATIC, 
   .nl_params = NULL, 
 )
 
 AI_TENSOR_CHAIN_OBJ_DECLARE(
-  dense_12_dense_chain, AI_STATIC_CONST, 4,
+  dense_dense_chain, AI_STATIC_CONST, 4,
   AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &input_0_output),
-  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &dense_12_dense_output),
-  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 2, &dense_12_dense_weights, &dense_12_dense_bias),
+  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 1, &dense_dense_output),
+  AI_TENSOR_LIST_OBJ_INIT(AI_FLAG_NONE, 2, &dense_dense_weights, &dense_dense_bias),
   AI_TENSOR_LIST_OBJ_EMPTY
 )
 
 AI_LAYER_OBJ_DECLARE(
-  dense_12_dense_layer, 0,
+  dense_dense_layer, 0,
   DENSE_TYPE, 0x0, NULL,
   dense, forward_dense,
-  &dense_12_dense_chain,
-  NULL, &dense_12_layer, AI_STATIC, 
+  &dense_dense_chain,
+  NULL, &dense_layer, AI_STATIC, 
 )
 
 
@@ -393,8 +393,8 @@ AI_NETWORK_OBJ_DECLARE(
     AI_BUFFER_SHAPE_INIT(AI_SHAPE_BCWH, 4, 1, 1152, 1, 1),
     1152, NULL, NULL),
   AI_TENSOR_LIST_IO_OBJ_INIT(AI_FLAG_NONE, AI_WINE_QUALITY_IN_NUM, &input_0_output),
-  AI_TENSOR_LIST_IO_OBJ_INIT(AI_FLAG_NONE, AI_WINE_QUALITY_OUT_NUM, &activation_3_output),
-  &dense_12_dense_layer, 0, NULL)
+  AI_TENSOR_LIST_IO_OBJ_INIT(AI_FLAG_NONE, AI_WINE_QUALITY_OUT_NUM, &activation_output),
+  &dense_dense_layer, 0, NULL)
 
 #else
 
@@ -413,8 +413,8 @@ AI_NETWORK_OBJ_DECLARE(
       1152, NULL, NULL)
   ),
   AI_TENSOR_LIST_IO_OBJ_INIT(AI_FLAG_NONE, AI_WINE_QUALITY_IN_NUM, &input_0_output),
-  AI_TENSOR_LIST_IO_OBJ_INIT(AI_FLAG_NONE, AI_WINE_QUALITY_OUT_NUM, &activation_3_output),
-  &dense_12_dense_layer, 0, NULL)
+  AI_TENSOR_LIST_IO_OBJ_INIT(AI_FLAG_NONE, AI_WINE_QUALITY_OUT_NUM, &activation_output),
+  &dense_dense_layer, 0, NULL)
 
 #endif	/*(AI_TOOLS_API_VERSION < AI_TOOLS_API_VERSION_1_5)*/
 
@@ -432,29 +432,29 @@ ai_bool wine_quality_configure_activations(
     input_0_output_array.data = AI_PTR(g_wine_quality_activations_map[0] + 352);
     input_0_output_array.data_start = AI_PTR(g_wine_quality_activations_map[0] + 352);
     
-    dense_12_dense_output_array.data = AI_PTR(g_wine_quality_activations_map[0] + 384);
-    dense_12_dense_output_array.data_start = AI_PTR(g_wine_quality_activations_map[0] + 384);
+    dense_dense_output_array.data = AI_PTR(g_wine_quality_activations_map[0] + 384);
+    dense_dense_output_array.data_start = AI_PTR(g_wine_quality_activations_map[0] + 384);
     
-    dense_12_output_array.data = AI_PTR(g_wine_quality_activations_map[0] + 384);
-    dense_12_output_array.data_start = AI_PTR(g_wine_quality_activations_map[0] + 384);
+    dense_output_array.data = AI_PTR(g_wine_quality_activations_map[0] + 384);
+    dense_output_array.data_start = AI_PTR(g_wine_quality_activations_map[0] + 384);
     
-    dense_13_dense_output_array.data = AI_PTR(g_wine_quality_activations_map[0] + 0);
-    dense_13_dense_output_array.data_start = AI_PTR(g_wine_quality_activations_map[0] + 0);
+    dense_1_dense_output_array.data = AI_PTR(g_wine_quality_activations_map[0] + 0);
+    dense_1_dense_output_array.data_start = AI_PTR(g_wine_quality_activations_map[0] + 0);
     
-    dense_13_output_array.data = AI_PTR(g_wine_quality_activations_map[0] + 384);
-    dense_13_output_array.data_start = AI_PTR(g_wine_quality_activations_map[0] + 384);
+    dense_1_output_array.data = AI_PTR(g_wine_quality_activations_map[0] + 384);
+    dense_1_output_array.data_start = AI_PTR(g_wine_quality_activations_map[0] + 384);
     
-    dense_14_dense_output_array.data = AI_PTR(g_wine_quality_activations_map[0] + 0);
-    dense_14_dense_output_array.data_start = AI_PTR(g_wine_quality_activations_map[0] + 0);
+    dense_2_dense_output_array.data = AI_PTR(g_wine_quality_activations_map[0] + 0);
+    dense_2_dense_output_array.data_start = AI_PTR(g_wine_quality_activations_map[0] + 0);
     
-    dense_14_output_array.data = AI_PTR(g_wine_quality_activations_map[0] + 128);
-    dense_14_output_array.data_start = AI_PTR(g_wine_quality_activations_map[0] + 128);
+    dense_2_output_array.data = AI_PTR(g_wine_quality_activations_map[0] + 128);
+    dense_2_output_array.data_start = AI_PTR(g_wine_quality_activations_map[0] + 128);
     
-    dense_15_dense_output_array.data = AI_PTR(g_wine_quality_activations_map[0] + 0);
-    dense_15_dense_output_array.data_start = AI_PTR(g_wine_quality_activations_map[0] + 0);
+    dense_3_dense_output_array.data = AI_PTR(g_wine_quality_activations_map[0] + 0);
+    dense_3_dense_output_array.data_start = AI_PTR(g_wine_quality_activations_map[0] + 0);
     
-    activation_3_output_array.data = AI_PTR(g_wine_quality_activations_map[0] + 28);
-    activation_3_output_array.data_start = AI_PTR(g_wine_quality_activations_map[0] + 28);
+    activation_output_array.data = AI_PTR(g_wine_quality_activations_map[0] + 28);
+    activation_output_array.data_start = AI_PTR(g_wine_quality_activations_map[0] + 28);
     
     return true;
   }
@@ -474,37 +474,37 @@ ai_bool wine_quality_configure_weights(
   if (ai_platform_get_weights_map(g_wine_quality_weights_map, 1, params)) {
     /* Updating weights (byte) offsets */
     
-    dense_14_dense_bias_array.format |= AI_FMT_FLAG_CONST;
-    dense_14_dense_bias_array.data = AI_PTR(g_wine_quality_weights_map[0] + 0);
-    dense_14_dense_bias_array.data_start = AI_PTR(g_wine_quality_weights_map[0] + 0);
+    dense_2_dense_bias_array.format |= AI_FMT_FLAG_CONST;
+    dense_2_dense_bias_array.data = AI_PTR(g_wine_quality_weights_map[0] + 0);
+    dense_2_dense_bias_array.data_start = AI_PTR(g_wine_quality_weights_map[0] + 0);
     
-    dense_15_dense_weights_array.format |= AI_FMT_FLAG_CONST;
-    dense_15_dense_weights_array.data = AI_PTR(g_wine_quality_weights_map[0] + 128);
-    dense_15_dense_weights_array.data_start = AI_PTR(g_wine_quality_weights_map[0] + 128);
+    dense_3_dense_weights_array.format |= AI_FMT_FLAG_CONST;
+    dense_3_dense_weights_array.data = AI_PTR(g_wine_quality_weights_map[0] + 128);
+    dense_3_dense_weights_array.data_start = AI_PTR(g_wine_quality_weights_map[0] + 128);
     
-    dense_15_dense_bias_array.format |= AI_FMT_FLAG_CONST;
-    dense_15_dense_bias_array.data = AI_PTR(g_wine_quality_weights_map[0] + 1024);
-    dense_15_dense_bias_array.data_start = AI_PTR(g_wine_quality_weights_map[0] + 1024);
+    dense_3_dense_bias_array.format |= AI_FMT_FLAG_CONST;
+    dense_3_dense_bias_array.data = AI_PTR(g_wine_quality_weights_map[0] + 1024);
+    dense_3_dense_bias_array.data_start = AI_PTR(g_wine_quality_weights_map[0] + 1024);
     
-    dense_12_dense_weights_array.format |= AI_FMT_FLAG_CONST;
-    dense_12_dense_weights_array.data = AI_PTR(g_wine_quality_weights_map[0] + 1052);
-    dense_12_dense_weights_array.data_start = AI_PTR(g_wine_quality_weights_map[0] + 1052);
+    dense_dense_weights_array.format |= AI_FMT_FLAG_CONST;
+    dense_dense_weights_array.data = AI_PTR(g_wine_quality_weights_map[0] + 1052);
+    dense_dense_weights_array.data_start = AI_PTR(g_wine_quality_weights_map[0] + 1052);
     
-    dense_12_dense_bias_array.format |= AI_FMT_FLAG_CONST;
-    dense_12_dense_bias_array.data = AI_PTR(g_wine_quality_weights_map[0] + 7196);
-    dense_12_dense_bias_array.data_start = AI_PTR(g_wine_quality_weights_map[0] + 7196);
+    dense_dense_bias_array.format |= AI_FMT_FLAG_CONST;
+    dense_dense_bias_array.data = AI_PTR(g_wine_quality_weights_map[0] + 7196);
+    dense_dense_bias_array.data_start = AI_PTR(g_wine_quality_weights_map[0] + 7196);
     
-    dense_13_dense_weights_array.format |= AI_FMT_FLAG_CONST;
-    dense_13_dense_weights_array.data = AI_PTR(g_wine_quality_weights_map[0] + 7964);
-    dense_13_dense_weights_array.data_start = AI_PTR(g_wine_quality_weights_map[0] + 7964);
+    dense_1_dense_weights_array.format |= AI_FMT_FLAG_CONST;
+    dense_1_dense_weights_array.data = AI_PTR(g_wine_quality_weights_map[0] + 7964);
+    dense_1_dense_weights_array.data_start = AI_PTR(g_wine_quality_weights_map[0] + 7964);
     
-    dense_13_dense_bias_array.format |= AI_FMT_FLAG_CONST;
-    dense_13_dense_bias_array.data = AI_PTR(g_wine_quality_weights_map[0] + 81692);
-    dense_13_dense_bias_array.data_start = AI_PTR(g_wine_quality_weights_map[0] + 81692);
+    dense_1_dense_bias_array.format |= AI_FMT_FLAG_CONST;
+    dense_1_dense_bias_array.data = AI_PTR(g_wine_quality_weights_map[0] + 81692);
+    dense_1_dense_bias_array.data_start = AI_PTR(g_wine_quality_weights_map[0] + 81692);
     
-    dense_14_dense_weights_array.format |= AI_FMT_FLAG_CONST;
-    dense_14_dense_weights_array.data = AI_PTR(g_wine_quality_weights_map[0] + 82076);
-    dense_14_dense_weights_array.data_start = AI_PTR(g_wine_quality_weights_map[0] + 82076);
+    dense_2_dense_weights_array.format |= AI_FMT_FLAG_CONST;
+    dense_2_dense_weights_array.data = AI_PTR(g_wine_quality_weights_map[0] + 82076);
+    dense_2_dense_weights_array.data_start = AI_PTR(g_wine_quality_weights_map[0] + 82076);
     
     return true;
   }

@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file    wine_quality.h
   * @author  AST Embedded Analytics Research Platform
-  * @date    Mon Sep 25 11:25:11 2023
+  * @date    Sun Oct  1 18:34:13 2023
   * @brief   AI Tool Automatic Code Generator for Embedded NN computing
   ******************************************************************************
   * @attention
@@ -25,7 +25,7 @@
 
 /******************************************************************************/
 #define AI_WINE_QUALITY_MODEL_NAME          "wine_quality"
-#define AI_WINE_QUALITY_ORIGIN_MODEL_NAME   "wine_quality_nn"
+#define AI_WINE_QUALITY_ORIGIN_MODEL_NAME   "wine_quality"
 
 /******************************************************************************/
 #define AI_WINE_QUALITY_ACTIVATIONS_ALIGNMENT   (4)

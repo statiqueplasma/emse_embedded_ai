@@ -8,6 +8,6 @@ main.c:360:13:MX_SPI2_Init	2
 main.c:400:13:MX_USART2_UART_Init	5
 main.c:448:13:MX_USART3_UART_Init	5
 main.c:496:13:MX_USB_OTG_FS_PCD_Init	2
-main.c:526:13:MX_FMC_Init	2
-main.c:586:13:MX_GPIO_Init	1
-main.c:806:6:Error_Handler	1
+main.c:527:13:MX_FMC_Init	2
+main.c:587:13:MX_GPIO_Init	1
+main.c:807:6:Error_Handler	1

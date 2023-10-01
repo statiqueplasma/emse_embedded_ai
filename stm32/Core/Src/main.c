@@ -115,11 +115,11 @@ int main(void)
   MX_FMC_Init();
   MX_I2C1_Init();
   MX_SAI1_Init();
-  //MX_SDMMC1_SD_Init();
+  MX_SDMMC1_SD_Init();
   MX_SPI2_Init();
   MX_USART2_UART_Init();
   MX_USART3_UART_Init();
-  //MX_USB_OTG_FS_PCD_Init();
+  MX_USB_OTG_FS_PCD_Init();
   MX_X_CUBE_AI_Init();
   /* USER CODE BEGIN 2 */
 
@@ -505,6 +505,7 @@ static void MX_USB_OTG_FS_PCD_Init(void)
   /* USER CODE END USB_OTG_FS_Init 1 */
   hpcd_USB_OTG_FS.Instance = USB_OTG_FS;
   hpcd_USB_OTG_FS.Init.dev_endpoints = 6;
+  hpcd_USB_OTG_FS.Init.speed = PCD_SPEED_FULL;
   hpcd_USB_OTG_FS.Init.phy_itface = PCD_PHY_EMBEDDED;
   hpcd_USB_OTG_FS.Init.Sof_enable = DISABLE;
   hpcd_USB_OTG_FS.Init.low_power_enable = DISABLE;

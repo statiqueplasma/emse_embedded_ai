@@ -1,7 +1,7 @@
 {
     "_allocate_inputs": 4,
     "_allocate_outputs": 4,
-    "cli_parameters": "validate --name wine_quality -m C:/Users/walid/Downloads/WINE_QUALITY_NN.h5 --type keras --compression none --verbosity 1 --workspace C:\\Users\\walid\\AppData\\Local\\Temp\\mxAI_workspace7130391118121008121516835831106306 --output C:\\Users\\walid\\.stm32cubemx\\wine_quality_output --allocate-inputs --allocate-outputs",
+    "cli_parameters": "generate --name wine_quality -m C:/Users/walid/Downloads/wine_quality.h5 --type keras --compression none --verbosity 1 --workspace C:\\Users\\walid\\AppData\\Local\\Temp\\mxAI_workspace7146558499134006768611286340881541 --output C:\\Users\\walid\\.stm32cubemx\\wine_quality_output --allocate-inputs --series stm32l4 --allocate-outputs",
     "cli_version": {
         "major": 1,
         "micro": 0,
@@ -13,12 +13,12 @@
         "factor": null,
         "layers": {}
     },
-    "date_time": "Sun Oct  1 18:07:15 2023",
+    "date_time": "Sun Oct  1 18:34:13 2023",
     "error": 0,
     "error_str": [],
-    "exec_cmd": "validate",
+    "exec_cmd": "generate",
     "exec_duration": 0.0,
-    "hash": "6deb76158a7197eff05c1d7090116643",
+    "hash": "0b377b34643d6f3fff76ac78165291fe",
     "inputs": [
         "input_0"
     ],
@@ -72,7 +72,7 @@
             "inputs": [
                 "input_0"
             ],
-            "name": "dense_12_dense",
+            "name": "dense_dense",
             "original": "Dense",
             "type": "Dense"
         },
@@ -96,9 +96,9 @@
             },
             "id": 0,
             "inputs": [
-                "dense_12_dense"
+                "dense_dense"
             ],
-            "name": "dense_12",
+            "name": "dense",
             "original": "Dense",
             "type": "Nonlinearity"
         },
@@ -125,9 +125,9 @@
             },
             "id": 1,
             "inputs": [
-                "dense_12"
+                "dense"
             ],
-            "name": "dense_13_dense",
+            "name": "dense_1_dense",
             "original": "Dense",
             "type": "Dense"
         },
@@ -151,9 +151,9 @@
             },
             "id": 1,
             "inputs": [
-                "dense_13_dense"
+                "dense_1_dense"
             ],
-            "name": "dense_13",
+            "name": "dense_1",
             "original": "Dense",
             "type": "Nonlinearity"
         },
@@ -180,9 +180,9 @@
             },
             "id": 2,
             "inputs": [
-                "dense_13"
+                "dense_1"
             ],
-            "name": "dense_14_dense",
+            "name": "dense_2_dense",
             "original": "Dense",
             "type": "Dense"
         },
@@ -206,9 +206,9 @@
             },
             "id": 2,
             "inputs": [
-                "dense_14_dense"
+                "dense_2_dense"
             ],
-            "name": "dense_14",
+            "name": "dense_2",
             "original": "Dense",
             "type": "Nonlinearity"
         },
@@ -234,9 +234,9 @@
             },
             "id": 3,
             "inputs": [
-                "dense_14"
+                "dense_2"
             ],
-            "name": "dense_15_dense",
+            "name": "dense_3_dense",
             "original": "Dense",
             "type": "Dense"
         },
@@ -262,23 +262,23 @@
             },
             "id": 4,
             "inputs": [
-                "dense_15_dense"
+                "dense_3_dense"
             ],
-            "name": "activation_3",
+            "name": "activation",
             "original": "Activation",
             "type": "Nonlinearity"
         }
     ],
     "model_files": [
-        "C:\\Users\\walid\\Downloads\\WINE_QUALITY_NN.h5"
+        "C:\\Users\\walid\\Downloads\\wine_quality.h5"
     ],
     "model_n_params": 23591,
-    "model_name": "WINE_QUALITY_NN",
+    "model_name": "wine_quality",
     "model_size": 94364,
     "model_type": "keras",
     "name": "wine_quality",
     "outputs": [
-        "activation_3"
+        "activation"
     ],
     "ram_io_size": [
         32,
@@ -303,7 +303,7 @@
         {
             "c_size": 28,
             "c_type": "float",
-            "name": "activation_3"
+            "name": "activation"
         }
     ],
     "rom_size": 94364,
@@ -319,20 +319,7 @@
         "micro": 0,
         "minor": 1
     },
-    "val_error": 7.461202500280706e-08,
-    "val_error_desc": "x-cross (l2r) #1",
-    "val_metrics": [
-        {
-            "acc": "100.00%",
-            "cos": 1.0,
-            "desc": "X-cross #1",
-            "l2r": 7.461202500280706e-08,
-            "mae": 7.739956231489487e-09,
-            "mean": 8.415164676200959e-10,
-            "nse": 0.9999999999999901,
-            "rmse": 1.5975389899836046e-08,
-            "std": 1.6068396391233364e-08,
-            "ts_name": "activation_3, ai_float, (1,7), m_id=[4]"
-        }
-    ]
+    "val_error": -1.0,
+    "val_error_desc": "None (None) #-1",
+    "val_metrics": []
 }
