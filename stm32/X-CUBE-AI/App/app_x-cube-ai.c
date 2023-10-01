@@ -58,6 +58,7 @@
 #include "wine_quality_data.h"
 
 /* USER CODE BEGIN includes */
+ extern UART_HandleTypeDef huart2;
 /* USER CODE END includes */
 
 /* IO buffers ----------------------------------------------------------------*/
@@ -171,26 +172,69 @@ static int ai_run(void)
 /* USER CODE BEGIN 2 */
 int acquire_and_process_data(ai_i8* data[])
 {
-  /* fill the inputs of the c-model
-  for (int idx=0; idx < AI_WINE_QUALITY_IN_NUM; idx++ )
-  {
-      data[idx] = ....
-  }
+ /* fill the inputs of the c-model */
+	uint8_t tmp[4] = {0};
 
-  */
-  return 0;
+	#if _DEBUG
+	float input[8] = {0};
+	#endif
+
+	  int i,k;
+	  for (i = 0; i < 8; i++){
+		  HAL_UART_Receive(&huart2, (uint8_t *) tmp, sizeof(tmp), 100);
+
+	#if _DEBUG
+	input[i] = *(float*) &tmp;
+	#endif
+		  for ( k = 0; k < 4; k++){
+			((uint8_t *) data)[((i*8)*4)+k] = tmp[k];
+		  }
+	  }
+
+	#if _DEBUG
+
+	// back forwarding the received image
+	for(i = 0; i < 8; i++){
+		float feature = input[i];
+		for (k = 0; k < 4 ; k++){
+		   tmp[k] = ((uint8_t *) &pixel)[k];
+		}
+		HAL_UART_Transmit(&huart2, (uint8_t *) tmp, sizeof(tmp), 100);
+	}
+
+	#endif
+
+	  return 0;
 }
 
 int post_process(ai_i8* data[])
 {
-  /* process the predictions
-  for (int idx=0; idx < AI_WINE_QUALITY_OUT_NUM; idx++ )
-  {
-      data[idx] = ....
-  }
+/* process the predictions */
+	  unsigned char output_to_be_tx[3] = "010";
+	  uint8_t *output = data; // don't care about the signed value of ai_i8...
+	  int i,j;
 
-  */
-  return 0;
+	#ifdef _DEBUG
+	float prob_classes[7] = {0};
+	for (i = 0; i < 7; i++){
+	  uint8_t tmp[4] = {0};
+	  for (j=0; j < 4; j++){
+		tmp[j] = output[i*4+j];
+	  }
+	  prob_classes[i] = *(float*) &tmp;
+	}
+	#endif
+
+	  HAL_UART_Transmit(&huart2, (uint8_t *) output_to_be_tx, sizeof(output_to_be_tx),100);
+
+	  for(i = 0; i < 7; i++){
+		uint8_t tmp[4] = {0};
+		for (j = 0; j < 4; j++){
+		  tmp[j] = output[i*4+j];
+		}
+		HAL_UART_Transmit(&huart2, (uint8_t *) tmp, sizeof(tmp), 100);
+	  }
+	  return 0;
 }
 /* USER CODE END 2 */
 
