@@ -5,9 +5,10 @@ ser = serial.Serial(port="COM12", baudrate=115200, timeout=1)
 ser.close()
 ser.open()
 
-# ser.write("")
-x = ser.read(3)
-print(x)
+y = np.load('WINE_QUALITY_X_TEST.npy')
+ser.write(y)
+#x = ser.read(3)
+#print(x)
 
 ser.close()
 

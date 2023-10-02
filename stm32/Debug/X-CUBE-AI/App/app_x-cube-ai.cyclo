@@ -4,4 +4,4 @@ app_x-cube-ai.c:158:12:ai_run	2
 app_x-cube-ai.c:173:5:acquire_and_process_data	3
 app_x-cube-ai.c:210:5:post_process	3
 app_x-cube-ai.c:243:6:MX_X_CUBE_AI_Init	1
-app_x-cube-ai.c:252:6:MX_X_CUBE_AI_Process	12
+app_x-cube-ai.c:252:6:MX_X_CUBE_AI_Process	6
