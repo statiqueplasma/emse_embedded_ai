@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file    wine_quality_data.c
   * @author  AST Embedded Analytics Research Platform
-  * @date    Sun Oct  1 18:34:13 2023
+  * @date    Mon Oct  2 21:41:37 2023
   * @brief   AI Tool Automatic Code Generator for Embedded NN computing
   ******************************************************************************
   * @attention
@@ -21,13 +21,13 @@
 AI_API_DECLARE_BEGIN
 ai_buffer g_wine_quality_data_map_activations[AI_WINE_QUALITY_DATA_ACTIVATIONS_COUNT] = {
   AI_BUFFER_INIT(AI_FLAG_NONE,  AI_BUFFER_FORMAT_U8,
-    AI_BUFFER_SHAPE_INIT(AI_SHAPE_BCWH, 4, 1, 1152, 1, 1),
-    1152, NULL, NULL),    /* heap_overlay_pool */
+    AI_BUFFER_SHAPE_INIT(AI_SHAPE_BCWH, 4, 1, 600, 1, 1),
+    600, NULL, NULL),    /* heap_overlay_pool */
   };
 ai_buffer g_wine_quality_data_map_weights[AI_WINE_QUALITY_DATA_WEIGHTS_COUNT] = {
   AI_BUFFER_INIT(AI_FLAG_NONE,  AI_BUFFER_FORMAT_U8,
-    AI_BUFFER_SHAPE_INIT(AI_SHAPE_BCWH, 4, 1, 94364, 1, 1),
-    94364, NULL, s_wine_quality_weights_array_u64),   /* weights_array */
+    AI_BUFFER_SHAPE_INIT(AI_SHAPE_BCWH, 4, 1, 31228, 1, 1),
+    31228, NULL, s_wine_quality_weights_array_u64),   /* weights_array */
   };
 
 

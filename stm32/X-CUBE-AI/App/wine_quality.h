@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file    wine_quality.h
   * @author  AST Embedded Analytics Research Platform
-  * @date    Sun Oct  1 18:34:13 2023
+  * @date    Mon Oct  2 21:41:37 2023
   * @brief   AI Tool Automatic Code Generator for Embedded NN computing
   ******************************************************************************
   * @attention
@@ -46,9 +46,9 @@ AI_DEPRECATED
   AI_WINE_QUALITY_IN_1_SIZE_BYTES, \
 }
 #define AI_WINE_QUALITY_IN_1_FORMAT      AI_BUFFER_FORMAT_FLOAT
-#define AI_WINE_QUALITY_IN_1_CHANNEL     (8)
-#define AI_WINE_QUALITY_IN_1_SIZE        (8)
-#define AI_WINE_QUALITY_IN_1_SIZE_BYTES  (32)
+#define AI_WINE_QUALITY_IN_1_CHANNEL     (12)
+#define AI_WINE_QUALITY_IN_1_SIZE        (12)
+#define AI_WINE_QUALITY_IN_1_SIZE_BYTES  (48)
 
 /******************************************************************************/
 #define AI_WINE_QUALITY_OUT_NUM       (1)

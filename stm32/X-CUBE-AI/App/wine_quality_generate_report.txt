@@ -1,53 +1,52 @@
 Neural Network Tools for STM32 family v1.7.0 (stm.ai v8.1.0-19520)
-Created date          : 2023-10-01 18:34:13
-Parameters            : generate --name wine_quality -m C:/Users/walid/Downloads/wine_quality.h5 --type keras --compression none --verbosity 1 --workspace C:\Users\walid\AppData\Local\Temp\mxAI_workspace7146558499134006768611286340881541 --output C:\Users\walid\.stm32cubemx\wine_quality_output --allocate-inputs --series stm32l4 --allocate-outputs
+Created date          : 2023-10-02 21:41:37
+Parameters            : generate --name wine_quality -m D:/WALID/EMSE ETUDES/SEMESTRE 9 2023/Embedded AI/Wine_Prediction_Project/emse_embedded_ai/wine_quality.h5 --type keras --compression none --verbosity 1 --workspace C:\Users\walid\AppData\Local\Temp\mxAI_workspace81230487002700013238804604880107639 --output C:\Users\walid\.stm32cubemx\wine_quality_output --allocate-inputs --series stm32l4 --allocate-outputs
 
 Exec/report summary (generate)
-------------------------------------------------------------------------------------------------------------
-model file         :   C:\Users\walid\Downloads\wine_quality.h5                                             
-type               :   keras                                                                                
-c_name             :   wine_quality                                                                         
-compression        :   none                                                                                 
-options            :   allocate-inputs, allocate-outputs                                                    
-optimization       :   balanced                                                                             
-target/series      :   stm32l4                                                                              
-workspace dir      :   C:\Users\walid\AppData\Local\Temp\mxAI_workspace7146558499134006768611286340881541   
-output dir         :   C:\Users\walid\.stm32cubemx\wine_quality_output                                      
-model_fmt          :   float                                                                                
-model_name         :   wine_quality                                                                         
-model_hash         :   0b377b34643d6f3fff76ac78165291fe                                                     
-params #           :   23,591 items (92.15 KiB)                                                             
-------------------------------------------------------------------------------------------------------------
-input 1/1          :   'input_0' (domain:activations/**default**)                                           
-                   :   8 items, 32 B, ai_float, float, (1,8)                                                
-output 1/1         :   'activation' (domain:activations/**default**)                                        
-                   :   7 items, 28 B, ai_float, float, (1,7)                                                
-macc               :   24,016                                                                               
-weights (ro)       :   94,364 B (92.15 KiB) (1 segment)                                                     
-activations (rw)   :   1,152 B (1.12 KiB) (1 segment) *                                                     
-ram (total)        :   1,152 B (1.12 KiB) = 1,152 + 0 + 0                                                   
-------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------
+model file         :   D:\WALID\EMSE ETUDES\SEMESTRE 9 2023\Embedded AI\Wine_Prediction_Project\emse_embedded_ai\wine_quality.h5   
+type               :   keras                                                                                                       
+c_name             :   wine_quality                                                                                                
+compression        :   none                                                                                                        
+options            :   allocate-inputs, allocate-outputs                                                                           
+optimization       :   balanced                                                                                                    
+target/series      :   stm32l4                                                                                                     
+workspace dir      :   C:\Users\walid\AppData\Local\Temp\mxAI_workspace81230487002700013238804604880107639                         
+output dir         :   C:\Users\walid\.stm32cubemx\wine_quality_output                                                             
+model_fmt          :   float                                                                                                       
+model_name         :   wine_quality                                                                                                
+model_hash         :   fe42bab49319e812ba07ce747fabec20                                                                            
+params #           :   7,807 items (30.50 KiB)                                                                                     
+-----------------------------------------------------------------------------------------------------------------------------------
+input 1/1          :   'input_0' (domain:activations/**default**)                                                                  
+                   :   12 items, 48 B, ai_float, float, (1,12)                                                                     
+output 1/1         :   'dense_7' (domain:activations/**default**)                                                                  
+                   :   7 items, 28 B, ai_float, float, (1,7)                                                                       
+macc               :   9,437                                                                                                       
+weights (ro)       :   31,228 B (30.50 KiB) (1 segment)                                                                            
+activations (rw)   :   600 B (600 B) (1 segment) *                                                                                 
+ram (total)        :   600 B (600 B) = 600 + 0 + 0                                                                                 
+-----------------------------------------------------------------------------------------------------------------------------------
 (*) 'input'/'output' buffers can be used from the activations buffer
 
-Model name - wine_quality ['input_0'] ['activation']
------- --------------------------------------- ---------------- --------------- -------- --------------- --- ----------------- ----------------- -------------------------- 
-m_id   layer (type,original)                   oshape           param/size          macc    connected to   | c_size            c_macc            c_type                     
------- --------------------------------------- ---------------- --------------- -------- --------------- --- ----------------- ----------------- -------------------------- 
-0      input_0 (Input, None)                   [b:None,c:8]                                                | +6,912(+100.0%)   +1,920(+100.0%)   dense_of32/nl_of32[0, 1]   
-       dense_dense (Dense, Dense)              [b:None,c:192]   1,728/6,912        1,728         input_0   | -6,912(-100.0%)   -1,728(-100.0%)   
-       dense (Nonlinearity, Dense)             [b:None,c:192]                        192     dense_dense   |                   -192(-100.0%)     
------- --------------------------------------- ---------------- --------------- -------- --------------- --- ----------------- ----------------- -------------------------- 
-1      dense_1_dense (Dense, Dense)            [b:None,c:96]    18,528/74,112     18,528           dense   |                   +96(+0.5%)        dense_of32/nl_of32[2, 3]   
-       dense_1 (Nonlinearity, Dense)           [b:None,c:96]                          96   dense_1_dense   |                   -96(-100.0%)      
------- --------------------------------------- ---------------- --------------- -------- --------------- --- ----------------- ----------------- -------------------------- 
-2      dense_2_dense (Dense, Dense)            [b:None,c:32]    3,104/12,416       3,104         dense_1   |                   +32(+1.0%)        dense_of32/nl_of32[4, 5]   
-       dense_2 (Nonlinearity, Dense)           [b:None,c:32]                          32   dense_2_dense   |                   -32(-100.0%)      
------- --------------------------------------- ---------------- --------------- -------- --------------- --- ----------------- ----------------- -------------------------- 
-3      dense_3_dense (Dense, Dense)            [b:None,c:7]     231/924              231         dense_2   |                                     dense_of32[6]              
------- --------------------------------------- ---------------- --------------- -------- --------------- --- ----------------- ----------------- -------------------------- 
-4      activation (Nonlinearity, Activation)   [b:None,c:7]                          105   dense_3_dense   |                                     nl_of32[o][7]              
------- --------------------------------------- ---------------- --------------- -------- --------------- --- ----------------- ----------------- -------------------------- 
-model/c-model: macc=24,016/24,016  weights=94,364/94,364  activations=--/1,152 io=--/0
+Model name - wine_quality ['input_0'] ['dense_7']
+------ ------------------------------- ---------------- -------------- ------- --------------- --- ----------------- ----------------- ----------------------------- 
+m_id   layer (type,original)           oshape           param/size        macc    connected to   | c_size            c_macc            c_type                        
+------ ------------------------------- ---------------- -------------- ------- --------------- --- ----------------- ----------------- ----------------------------- 
+0      input_0 (Input, None)           [b:None,c:12]                                             | +5,200(+100.0%)   +2,300(+100.0%)   dense_of32/nl_of32[0, 1]      
+       dense_4_dense (Dense, Dense)    [b:None,c:100]   1,300/5,200      1,300         input_0   | -5,200(-100.0%)   -1,300(-100.0%)   
+       dense_4 (Nonlinearity, Dense)   [b:None,c:100]                    1,000   dense_4_dense   |                   -1,000(-100.0%)   
+------ ------------------------------- ---------------- -------------- ------- --------------- --- ----------------- ----------------- ----------------------------- 
+1      dense_5_dense (Dense, Dense)    [b:None,c:50]    5,050/20,200     5,050         dense_4   |                   +500(+9.9%)       dense_of32/nl_of32[2, 3]      
+       dense_5 (Nonlinearity, Dense)   [b:None,c:50]                       500   dense_5_dense   |                   -500(-100.0%)     
+------ ------------------------------- ---------------- -------------- ------- --------------- --- ----------------- ----------------- ----------------------------- 
+2      dense_6_dense (Dense, Dense)    [b:None,c:25]    1,275/5,100      1,275         dense_5   |                   +25(+2.0%)        dense_of32/nl_of32[4, 5]      
+       dense_6 (Nonlinearity, Dense)   [b:None,c:25]                        25   dense_6_dense   |                   -25(-100.0%)      
+------ ------------------------------- ---------------- -------------- ------- --------------- --- ----------------- ----------------- ----------------------------- 
+4      dense_7_dense (Dense, Dense)    [b:None,c:7]     182/728            182         dense_6   |                   +105(+57.7%)      dense_of32/nl_of32[o][6, 7]   
+       dense_7 (Nonlinearity, Dense)   [b:None,c:7]                        105   dense_7_dense   |                   -105(-100.0%)     
+------ ------------------------------- ---------------- -------------- ------- --------------- --- ----------------- ----------------- ----------------------------- 
+model/c-model: macc=9,437/9,437  weights=31,228/31,228  activations=--/600 io=--/0
 
 
 
@@ -57,107 +56,106 @@ model name            : wine_quality
 c-name                : wine_quality
 c-node #              : 8
 c-array #             : 17
-activations size      : 1152 (1 segment)
-weights size          : 94364 (1 segment)
-macc                  : 24016
+activations size      : 600 (1 segment)
+weights size          : 31228 (1 segment)
+macc                  : 9437
 inputs                : ['input_0_output']
-outputs               : ['activation_output']
+outputs               : ['dense_7_output']
 
 C-Arrays (17)
------- ----------------------- ------------- ------------------------- ------------- --------- --------- 
-c_id   name (*_array)          item/size     domain/mem-pool           c-type        fmt       comment   
------- ----------------------- ------------- ------------------------- ------------- --------- --------- 
-0      input_0_output          8/32          activations/**default**   float         float32   /input    
-1      dense_2_dense_bias      32/128        weights/weights           const float   float32             
-2      dense_dense_output      192/768       activations/**default**   float         float32             
-3      dense_output            192/768       activations/**default**   float         float32             
-4      dense_3_dense_weights   224/896       weights/weights           const float   float32             
-5      dense_1_dense_output    96/384        activations/**default**   float         float32             
-6      dense_3_dense_bias      7/28          weights/weights           const float   float32             
-7      dense_1_output          96/384        activations/**default**   float         float32             
-8      dense_2_dense_output    32/128        activations/**default**   float         float32             
-9      dense_2_output          32/128        activations/**default**   float         float32             
-10     dense_3_dense_output    7/28          activations/**default**   float         float32             
-11     activation_output       7/28          activations/**default**   float         float32   /output   
-12     dense_dense_weights     1536/6144     weights/weights           const float   float32             
-13     dense_dense_bias        192/768       weights/weights           const float   float32             
-14     dense_1_dense_weights   18432/73728   weights/weights           const float   float32             
-15     dense_1_dense_bias      96/384        weights/weights           const float   float32             
-16     dense_2_dense_weights   3072/12288    weights/weights           const float   float32             
------- ----------------------- ------------- ------------------------- ------------- --------- --------- 
+------ ----------------------- ------------ ------------------------- ------------- --------- --------- 
+c_id   name (*_array)          item/size    domain/mem-pool           c-type        fmt       comment   
+------ ----------------------- ------------ ------------------------- ------------- --------- --------- 
+0      input_0_output          12/48        activations/**default**   float         float32   /input    
+1      dense_6_dense_bias      25/100       weights/weights           const float   float32             
+2      dense_4_dense_output    100/400      activations/**default**   float         float32             
+3      dense_4_output          100/400      activations/**default**   float         float32             
+4      dense_7_dense_weights   175/700      weights/weights           const float   float32             
+5      dense_5_dense_output    50/200       activations/**default**   float         float32             
+6      dense_7_dense_bias      7/28         weights/weights           const float   float32             
+7      dense_5_output          50/200       activations/**default**   float         float32             
+8      dense_6_dense_output    25/100       activations/**default**   float         float32             
+9      dense_6_output          25/100       activations/**default**   float         float32             
+10     dense_7_dense_output    7/28         activations/**default**   float         float32             
+11     dense_7_output          7/28         activations/**default**   float         float32   /output   
+12     dense_4_dense_weights   1200/4800    weights/weights           const float   float32             
+13     dense_4_dense_bias      100/400      weights/weights           const float   float32             
+14     dense_5_dense_weights   5000/20000   weights/weights           const float   float32             
+15     dense_5_dense_bias      50/200       weights/weights           const float   float32             
+16     dense_6_dense_weights   1250/5000    weights/weights           const float   float32             
+------ ----------------------- ------------ ------------------------- ------------- --------- --------- 
 
 C-Layers (8)
------- ---------------- ---- ------------ ------- ------- -------------------------- ------------------ 
-c_id   name (*_layer)   id   layer_type   macc    rom     tensors                    shape (array id)   
------- ---------------- ---- ------------ ------- ------- -------------------------- ------------------ 
-0      dense_dense      0    dense        1728    6912    I: input_0_output          (1,8) (0)          
-                                                          W: dense_dense_weights     (8,192) (12)       
-                                                          W: dense_dense_bias        (192,) (13)        
-                                                          O: dense_dense_output      (1,192) (2)        
------- ---------------- ---- ------------ ------- ------- -------------------------- ------------------ 
-1      dense            0    nl           192     0       I: dense_dense_output      (1,192) (2)        
-                                                          O: dense_output            (1,192) (3)        
------- ---------------- ---- ------------ ------- ------- -------------------------- ------------------ 
-2      dense_1_dense    1    dense        18528   74112   I: dense_output            (1,192) (3)        
-                                                          W: dense_1_dense_weights   (192,96) (14)      
-                                                          W: dense_1_dense_bias      (96,) (15)         
-                                                          O: dense_1_dense_output    (1,96) (5)         
------- ---------------- ---- ------------ ------- ------- -------------------------- ------------------ 
-3      dense_1          1    nl           96      0       I: dense_1_dense_output    (1,96) (5)         
-                                                          O: dense_1_output          (1,96) (7)         
------- ---------------- ---- ------------ ------- ------- -------------------------- ------------------ 
-4      dense_2_dense    2    dense        3104    12416   I: dense_1_output          (1,96) (7)         
-                                                          W: dense_2_dense_weights   (96,32) (16)       
-                                                          W: dense_2_dense_bias      (32,) (1)          
-                                                          O: dense_2_dense_output    (1,32) (8)         
------- ---------------- ---- ------------ ------- ------- -------------------------- ------------------ 
-5      dense_2          2    nl           32      0       I: dense_2_dense_output    (1,32) (8)         
-                                                          O: dense_2_output          (1,32) (9)         
------- ---------------- ---- ------------ ------- ------- -------------------------- ------------------ 
-6      dense_3_dense    3    dense        231     924     I: dense_2_output          (1,32) (9)         
-                                                          W: dense_3_dense_weights   (32,7) (4)         
-                                                          W: dense_3_dense_bias      (7,) (6)           
-                                                          O: dense_3_dense_output    (1,7) (10)         
------- ---------------- ---- ------------ ------- ------- -------------------------- ------------------ 
-7      activation       4    nl           105     0       I: dense_3_dense_output    (1,7) (10)         
-                                                          O: activation_output       (1,7) (11)         
------- ---------------- ---- ------------ ------- ------- -------------------------- ------------------ 
+------ ---------------- ---- ------------ ------ ------- -------------------------- ------------------ 
+c_id   name (*_layer)   id   layer_type   macc   rom     tensors                    shape (array id)   
+------ ---------------- ---- ------------ ------ ------- -------------------------- ------------------ 
+0      dense_4_dense    0    dense        1300   5200    I: input_0_output          (1,12) (0)         
+                                                         W: dense_4_dense_weights   (12,100) (12)      
+                                                         W: dense_4_dense_bias      (100,) (13)        
+                                                         O: dense_4_dense_output    (1,100) (2)        
+------ ---------------- ---- ------------ ------ ------- -------------------------- ------------------ 
+1      dense_4          0    nl           1000   0       I: dense_4_dense_output    (1,100) (2)        
+                                                         O: dense_4_output          (1,100) (3)        
+------ ---------------- ---- ------------ ------ ------- -------------------------- ------------------ 
+2      dense_5_dense    1    dense        5050   20200   I: dense_4_output          (1,100) (3)        
+                                                         W: dense_5_dense_weights   (100,50) (14)      
+                                                         W: dense_5_dense_bias      (50,) (15)         
+                                                         O: dense_5_dense_output    (1,50) (5)         
+------ ---------------- ---- ------------ ------ ------- -------------------------- ------------------ 
+3      dense_5          1    nl           500    0       I: dense_5_dense_output    (1,50) (5)         
+                                                         O: dense_5_output          (1,50) (7)         
+------ ---------------- ---- ------------ ------ ------- -------------------------- ------------------ 
+4      dense_6_dense    2    dense        1275   5100    I: dense_5_output          (1,50) (7)         
+                                                         W: dense_6_dense_weights   (50,25) (16)       
+                                                         W: dense_6_dense_bias      (25,) (1)          
+                                                         O: dense_6_dense_output    (1,25) (8)         
+------ ---------------- ---- ------------ ------ ------- -------------------------- ------------------ 
+5      dense_6          2    nl           25     0       I: dense_6_dense_output    (1,25) (8)         
+                                                         O: dense_6_output          (1,25) (9)         
+------ ---------------- ---- ------------ ------ ------- -------------------------- ------------------ 
+6      dense_7_dense    4    dense        182    728     I: dense_6_output          (1,25) (9)         
+                                                         W: dense_7_dense_weights   (25,7) (4)         
+                                                         W: dense_7_dense_bias      (7,) (6)           
+                                                         O: dense_7_dense_output    (1,7) (10)         
+------ ---------------- ---- ------------ ------ ------- -------------------------- ------------------ 
+7      dense_7          4    nl           105    0       I: dense_7_dense_output    (1,7) (10)         
+                                                         O: dense_7_output          (1,7) (11)         
+------ ---------------- ---- ------------ ------ ------- -------------------------- ------------------ 
 
 
 
 Number of operations per c-layer
-------- ------ ----------------------- -------- -------------- -------- ---------- 
-c_id    m_id   name (type)                  #op           type   #param   sparsity 
-------- ------ ----------------------- -------- -------------- -------- ---------- 
-0       0      dense_dense (dense)        1,728   smul_f32_f32    1,728     0.0104 
-1       0      dense (nl)                   192     op_f32_f32          
-2       1      dense_1_dense (dense)     18,528   smul_f32_f32   18,528     0.0001 
-3       1      dense_1 (nl)                  96     op_f32_f32          
-4       2      dense_2_dense (dense)      3,104   smul_f32_f32    3,104     0.0000 
-5       2      dense_2 (nl)                  32     op_f32_f32          
-6       3      dense_3_dense (dense)        231   smul_f32_f32      231     0.0000 
-7       4      activation (nl)              105     op_f32_f32          
-------- ------ ----------------------- -------- -------------- -------- ---------- 
-total                                    24,016                  23,591     0.0008 
+------- ------ ----------------------- ------- -------------- -------- ---------- 
+c_id    m_id   name (type)                 #op           type   #param   sparsity 
+------- ------ ----------------------- ------- -------------- -------- ---------- 
+0       0      dense_4_dense (dense)     1,300   smul_f32_f32    1,300     0.0000 
+1       0      dense_4 (nl)              1,000     op_f32_f32          
+2       1      dense_5_dense (dense)     5,050   smul_f32_f32    5,050     0.0000 
+3       1      dense_5 (nl)                500     op_f32_f32          
+4       2      dense_6_dense (dense)     1,275   smul_f32_f32    1,275     0.0000 
+5       2      dense_6 (nl)                 25     op_f32_f32          
+6       4      dense_7_dense (dense)       182   smul_f32_f32      182     0.0000 
+7       4      dense_7 (nl)                105     op_f32_f32          
+------- ------ ----------------------- ------- -------------- -------- ---------- 
+total                                    9,437                   7,807     0.0000 
 
 Number of operation types
----------------- -------- ----------- 
-operation type          #           % 
----------------- -------- ----------- 
-smul_f32_f32       23,591       98.2% 
-op_f32_f32            425        1.8% 
+---------------- ------- ----------- 
+operation type         #           % 
+---------------- ------- ----------- 
+smul_f32_f32       7,807       82.7% 
+op_f32_f32         1,630       17.3% 
 
 Complexity report (model)
 ------ --------------- ------------------------- ------------------------- -------- 
 m_id   name            c_macc                    c_rom                     c_id     
 ------ --------------- ------------------------- ------------------------- -------- 
-0      input_0         ||                 8.0%   ||                 7.3%   [0, 1]   
-1      dense_1_dense   ||||||||||||||||  77.5%   ||||||||||||||||  78.5%   [2, 3]   
-2      dense_2_dense   |||               13.1%   |||               13.2%   [4, 5]   
-3      dense_3_dense   |                  1.0%   |                  1.0%   [6]      
-4      activation      |                  0.4%   |                  0.0%   [7]      
+0      input_0         |||||||           24.4%   ||||              16.7%   [0, 1]   
+1      dense_5_dense   ||||||||||||||||  58.8%   ||||||||||||||||  64.7%   [2, 3]   
+2      dense_6_dense   ||||              13.8%   ||||              16.3%   [4, 5]   
+4      dense_7_dense   |                  3.0%   |                  2.3%   [6, 7]   
 ------ --------------- ------------------------- ------------------------- -------- 
-macc=24,016 weights=94,364 act=1,152 ram_io=0
+macc=9,437 weights=31,228 act=600 ram_io=0
 
 Generated files (7)
 ---------------------------------------------------------------------------- 
