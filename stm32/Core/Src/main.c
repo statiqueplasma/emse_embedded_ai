@@ -130,7 +130,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-  MX_X_CUBE_AI_Process();
+	MX_X_CUBE_AI_Process();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

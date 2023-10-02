@@ -210,7 +210,7 @@ int acquire_and_process_data(ai_i8* data[])
 int post_process(ai_i8* data[])
 {
 /* process the predictions */
-	  unsigned char output_to_be_tx[3] = "010";
+	  unsigned char output_to_be_tx[3] = "101";
 	  uint8_t *output = data; // don't care about the signed value of ai_i8...
 	  int i,j;
 
@@ -272,7 +272,7 @@ void MX_X_CUBE_AI_Process(void)
 
 	  /* TO MODIFY -> 0 - Synchronisation with Python Script */
 	unsigned char ack[4] = "0000";
-	unsigned char return_ack[3] = "101";
+	unsigned char return_ack[3] = "111";
 	uint8_t sync = 0;
 	uint8_t ack_received = 0;
 
