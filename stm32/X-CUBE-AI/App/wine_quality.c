@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file    wine_quality.c
   * @author  AST Embedded Analytics Research Platform
-  * @date    Mon Oct  2 21:41:37 2023
+  * @date    Thu Oct 12 20:39:47 2023
   * @brief   AI Tool Automatic Code Generator for Embedded NN computing
   ******************************************************************************
   * @attention
@@ -42,7 +42,7 @@
 #endif
 
 #undef AI_TOOLS_DATE_TIME
-#define AI_TOOLS_DATE_TIME   "Mon Oct  2 21:41:37 2023"
+#define AI_TOOLS_DATE_TIME   "Thu Oct 12 20:39:47 2023"
 
 #undef AI_TOOLS_COMPILE_TIME
 #define AI_TOOLS_COMPILE_TIME    __DATE__ " " __TIME__
