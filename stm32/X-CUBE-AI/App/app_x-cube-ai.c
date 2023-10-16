@@ -58,6 +58,7 @@
 #include "wine_quality_data.h"
 
 /* USER CODE BEGIN includes */
+extern UART_HandleTypeDef huart2;
 /* USER CODE END includes */
 
 /* IO buffers ----------------------------------------------------------------*/
@@ -177,6 +178,7 @@ int acquire_and_process_data(ai_i8* data[])
       data[idx] = ....
   }
 
+
   */
   return 0;
 }
@@ -212,9 +214,28 @@ void MX_X_CUBE_AI_Process(void)
 
   printf("TEMPLATE - run - main loop\r\n");
 
+  char test[] = "test 101";
+  char Rx[8];
   if (wine_quality) {
 
     do {
+
+    	HAL_UART_Transmit(&huart2, (uint8_t *) test, sizeof(test), 100);
+    	HAL_UART_Receive(&huart2, (uint8_t *) Rx, sizeof(Rx), 100);
+    HAL_UART_Transmit(&huart2, (uint8_t *) Rx, sizeof(Rx), 100);
+    if(Rx[0] == 'o' && Rx[1] == 'k'){
+    	char test2[] = "yes";
+    	HAL_UART_Transmit(&huart2, (uint8_t *) test2, sizeof(test2), 100);
+    }
+    else{
+    	for (int i =0; i < sizeof(Rx)/sizeof(uint8_t); i++){
+    		char received[] = "receivedData = ";
+    		received[-1] = Rx[i];
+    		HAL_UART_Transmit(&huart2, (uint8_t *) received, sizeof(received), 100);
+    		HAL_Delay(2000);
+    	}
+    	HAL_Delay(5000);
+    }
       /* 1 - acquire and pre-process input data */
       res = acquire_and_process_data(data_ins);
       /* 2 - process the data - call inference engine */

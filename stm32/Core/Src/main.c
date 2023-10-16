@@ -115,11 +115,11 @@ int main(void)
   MX_FMC_Init();
   MX_I2C1_Init();
   MX_SAI1_Init();
-  MX_SDMMC1_SD_Init();
+  //MX_SDMMC1_SD_Init();
   MX_SPI2_Init();
   MX_USART2_UART_Init();
   MX_USART3_UART_Init();
-  MX_USB_OTG_FS_PCD_Init();
+  //MX_USB_OTG_FS_PCD_Init();
   MX_X_CUBE_AI_Init();
   /* USER CODE BEGIN 2 */
 
@@ -130,9 +130,8 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
-  MX_X_CUBE_AI_Process();
     /* USER CODE BEGIN 3 */
+  MX_X_CUBE_AI_Process();
   }
   /* USER CODE END 3 */
 }

@@ -1,0 +1,13 @@
+../X-CUBE-AI/App/wine_quality.c:424:9:wine_quality_configure_activations	2
+../X-CUBE-AI/App/wine_quality.c:469:9:wine_quality_configure_weights	2
+../X-CUBE-AI/App/wine_quality.c:521:9:ai_wine_quality_get_info	4
+../X-CUBE-AI/App/wine_quality.c:567:9:ai_wine_quality_get_report	4
+../X-CUBE-AI/App/wine_quality.c:613:10:ai_wine_quality_get_error	1
+../X-CUBE-AI/App/wine_quality.c:619:10:ai_wine_quality_create	1
+../X-CUBE-AI/App/wine_quality.c:629:10:ai_wine_quality_create_and_init	8
+../X-CUBE-AI/App/wine_quality.c:663:12:ai_wine_quality_inputs_get	2
+../X-CUBE-AI/App/wine_quality.c:673:12:ai_wine_quality_outputs_get	2
+../X-CUBE-AI/App/wine_quality.c:683:11:ai_wine_quality_destroy	1
+../X-CUBE-AI/App/wine_quality.c:689:9:ai_wine_quality_init	2
+../X-CUBE-AI/App/wine_quality.c:706:8:ai_wine_quality_run	1
+../X-CUBE-AI/App/wine_quality.c:713:8:ai_wine_quality_forward	1
