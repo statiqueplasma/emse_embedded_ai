@@ -260,7 +260,7 @@ void MX_X_CUBE_AI_Process(void)
   if (wine_quality) {
   // set pointer on NN buffer
 	#if defined(AI_WINE_QUALITY_INPUTS_IN_ACTIVATIONS)
-	 in_data = ai_input[0].data;
+	  in_data = ai_input[0].data;
 
 	#endif
 

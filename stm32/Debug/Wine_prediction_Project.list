@@ -462,11 +462,11 @@ int main(void)
   //MX_USB_OTG_FS_PCD_Init();
   MX_X_CUBE_AI_Init();
  80005d0:	f005 ff00 	bl	80063d4 <MX_X_CUBE_AI_Init>
-  /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
     /* USER CODE END WHILE */
+
   MX_X_CUBE_AI_Process();
  80005d4:	f005 ff0c 	bl	80063f0 <MX_X_CUBE_AI_Process>
  80005d8:	e7fc      	b.n	80005d4 <main+0x30>
@@ -16384,7 +16384,7 @@ void MX_X_CUBE_AI_Process(void)
  8006410:	d01b      	beq.n	800644a <MX_X_CUBE_AI_Process+0x5a>
   // set pointer on NN buffer
 	#if defined(AI_WINE_QUALITY_INPUTS_IN_ACTIVATIONS)
-	 in_data = ai_input[0].data;
+	  in_data = ai_input[0].data;
  8006412:	4b19      	ldr	r3, [pc, #100]	; (8006478 <MX_X_CUBE_AI_Process+0x88>)
  8006414:	681b      	ldr	r3, [r3, #0]
  8006416:	685b      	ldr	r3, [r3, #4]
