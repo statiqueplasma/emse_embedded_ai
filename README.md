@@ -1,2 +1,9 @@
 # emse_embedded_ai
-wine_quality : Model name
+
+```c
+int str;
+//
+if(str == 25){
+    return "hrllo";
+}
+```
