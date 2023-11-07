@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file    wine_quality_data_params.h
   * @author  AST Embedded Analytics Research Platform
-  * @date    Thu Oct 12 20:39:47 2023
+  * @date    Tue Nov  7 21:50:20 2023
   * @brief   AI Tool Automatic Code Generator for Embedded NN computing
   ******************************************************************************
   * Copyright (c) 2023 STMicroelectronics.
@@ -29,18 +29,18 @@
 
 
 #define AI_WINE_QUALITY_DATA_ACTIVATIONS_SIZES \
-  { 600, }
-#define AI_WINE_QUALITY_DATA_ACTIVATIONS_SIZE     (600)
+  { 720, }
+#define AI_WINE_QUALITY_DATA_ACTIVATIONS_SIZE     (720)
 #define AI_WINE_QUALITY_DATA_ACTIVATIONS_COUNT    (1)
-#define AI_WINE_QUALITY_DATA_ACTIVATION_1_SIZE    (600)
+#define AI_WINE_QUALITY_DATA_ACTIVATION_1_SIZE    (720)
 
 
 
 #define AI_WINE_QUALITY_DATA_WEIGHTS_SIZES \
-  { 31228, }
-#define AI_WINE_QUALITY_DATA_WEIGHTS_SIZE         (31228)
+  { 43468, }
+#define AI_WINE_QUALITY_DATA_WEIGHTS_SIZE         (43468)
 #define AI_WINE_QUALITY_DATA_WEIGHTS_COUNT        (1)
-#define AI_WINE_QUALITY_DATA_WEIGHT_1_SIZE        (31228)
+#define AI_WINE_QUALITY_DATA_WEIGHT_1_SIZE        (43468)
 
 
 

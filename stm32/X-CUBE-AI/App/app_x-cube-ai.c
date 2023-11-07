@@ -175,36 +175,40 @@ int acquire_and_process_data(ai_i8* data[])
  /* fill the inputs of the c-model */
 	uint8_t tmp[4] = {0};
 
+
 	#if _DEBUG
 	float input[12] = {0}; // Stocker les valeurs d'entrée en mode Debug
 	#endif
 
 	  int i,k;
-	  for (i = 0; i < 13; i++){
+	  for (i = 0; i < 12; i++){
 		  HAL_UART_Receive(&huart2, (uint8_t *) tmp, sizeof(tmp), 100);
 
-	#if _DEBUG
-	input[i] = *(float*) &tmp;
-	#endif
+		#if _DEBUG
+		input[i] = *(float*) &tmp;
+		#endif
 
 	// Copier les bytes reçus dans le tableau de données
 		  for ( k = 0; k < 4; k++){
-			((uint8_t *) data)[((i*8)*4)+k] = tmp[k];
+			((uint8_t *) data)[(i*4)+k] = tmp[k];
 		  }
+
+
 	  }
 
-	#if _DEBUG
 
-	  // Transmettre à nouveau les valeurs reçues en mode debug
-	for(i = 0; i < 8; i++){
-		float value = input[i];
-		for (k = 0; k < 4 ; k++){
-		   tmp[k] = ((uint8_t *) &value)[k];
-		}
-		HAL_UART_Transmit(&huart2, (uint8_t *) tmp, sizeof(tmp), 100);
-	}
-
-	#endif
+//	#if _DEBUG
+//
+//	  // Transmettre à nouveau les valeurs reçues en mode debug
+//	for(i = 0; i < 12; i++){
+//		float value = input[i];
+//		for (k = 0; k < 4 ; k++){
+//		   tmp[k] = ((uint8_t *) &value)[k];
+//		}
+//		HAL_UART_Transmit(&huart2, (uint8_t *) tmp, sizeof(tmp), 100);
+//	}
+//
+//	#endif
 
 	  return 0;
 }
@@ -212,7 +216,6 @@ int acquire_and_process_data(ai_i8* data[])
 int post_process(ai_i8* data[])
 {
 /* process the predictions */
-	  unsigned char output_to_be_tx[3] = "101";
 	  uint8_t *output = data; // don't care about the signed value of ai_i8...
 	  int i;
 
@@ -226,8 +229,6 @@ int post_process(ai_i8* data[])
 	  float predicted_quality = *(float*) &tmp;
 	  printf("Predicted quality: %f\n", predicted_quality)
 	#endif
-
-	HAL_UART_Transmit(&huart2, (uint8_t *) output_to_be_tx, sizeof(output_to_be_tx),100);
 
 	for (i=0; i < 4; i++){
 		tmp[i] = output[i];
@@ -256,8 +257,7 @@ void MX_X_CUBE_AI_Process(void)
   uint8_t *out_data = NULL;
   printf("TEMPLATE - run - main loop\r\n");
 
-  char test[3] = "101";
-  char Rx[2];
+
 
   if (wine_quality) {
   // set pointer on NN buffer
@@ -274,11 +274,8 @@ void MX_X_CUBE_AI_Process(void)
 	#endif
 
     do {
-    	HAL_UART_Receive(&huart2, (uint8_t *) Rx, sizeof(Rx), 100);
-
-    	if (Rx[1] == 'o' && Rx[0] == 'k'){
-    		HAL_UART_Transmit(&huart2, (uint8_t *) test, sizeof(test), 100);
-    	}
+    	uint8_t start[4] = "1234";
+    	  HAL_UART_Transmit(&huart2, (uint8_t *) start, sizeof(start), 100);
       /* 1 - acquire and pre-process input data */
       res = acquire_and_process_data(data_ins);
       /* 2 - process the data - call inference engine */

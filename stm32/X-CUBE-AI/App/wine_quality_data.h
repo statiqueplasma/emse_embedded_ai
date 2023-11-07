@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file    wine_quality_data.h
   * @author  AST Embedded Analytics Research Platform
-  * @date    Thu Oct 12 20:39:47 2023
+  * @date    Tue Nov  7 21:50:20 2023
   * @brief   AI Tool Automatic Code Generator for Embedded NN computing
   ******************************************************************************
   * Copyright (c) 2023 STMicroelectronics.
@@ -33,7 +33,7 @@ AI_DEPRECATED
 AI_API_DECLARE_BEGIN
 
 
-extern const ai_u64 s_wine_quality_weights_array_u64[3904];
+extern const ai_u64 s_wine_quality_weights_array_u64[5434];
 
 
 
