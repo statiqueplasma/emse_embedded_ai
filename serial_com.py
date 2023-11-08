@@ -46,7 +46,7 @@ fail_count = 0
 def main():
     ser = serial.Serial(
         # Prot used by your computer
-        port='/dev/ttyACM0',
+        port='COM12',
         baudrate=115200,
         parity=serial.PARITY_ODD,
         stopbits=serial.STOPBITS_TWO,

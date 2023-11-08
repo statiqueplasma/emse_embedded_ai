@@ -1,6 +1,6 @@
 Neural Network Tools for STM32 family v1.7.0 (stm.ai v8.1.0-19520)
-Created date          : 2023-11-07 21:50:20
-Parameters            : generate --name wine_quality -m D:/WALID/EMSE ETUDES/SEMESTRE 9 2023/Embedded AI/Wine_Prediction_Project/emse_embedded_ai/wine_quality.h5 --type keras --compression none --verbosity 1 --workspace C:\Users\walid\AppData\Local\Temp\mxAI_workspace13812021364006524196244105699642 --output C:\Users\walid\.stm32cubemx\wine_quality_output --allocate-inputs --series stm32l4 --allocate-outputs
+Created date          : 2023-11-08 22:27:42
+Parameters            : generate --name wine_quality -m D:/WALID/EMSE ETUDES/SEMESTRE 9 2023/Embedded AI/Wine_Prediction_Project/emse_embedded_ai/wine_quality.h5 --type keras --compression none --verbosity 1 --workspace C:\Users\walid\AppData\Local\Temp\mxAI_workspace900581883652006126299944991076298 --output C:\Users\walid\.stm32cubemx\wine_quality_output --allocate-inputs --series stm32l4 --allocate-outputs
 
 Exec/report summary (generate)
 -----------------------------------------------------------------------------------------------------------------------------------
@@ -11,11 +11,11 @@ compression        :   none
 options            :   allocate-inputs, allocate-outputs                                                                           
 optimization       :   balanced                                                                                                    
 target/series      :   stm32l4                                                                                                     
-workspace dir      :   C:\Users\walid\AppData\Local\Temp\mxAI_workspace13812021364006524196244105699642                            
+workspace dir      :   C:\Users\walid\AppData\Local\Temp\mxAI_workspace900581883652006126299944991076298                           
 output dir         :   C:\Users\walid\.stm32cubemx\wine_quality_output                                                             
 model_fmt          :   float                                                                                                       
 model_name         :   wine_quality                                                                                                
-model_hash         :   7e895cd65e0849e392ddb36e29d83e2e                                                                            
+model_hash         :   722ca9d13779ab1f8217a1164b2ea102                                                                            
 params #           :   10,867 items (42.45 KiB)                                                                                    
 -----------------------------------------------------------------------------------------------------------------------------------
 input 1/1          :   'input_0' (domain:activations/**default**)                                                                  

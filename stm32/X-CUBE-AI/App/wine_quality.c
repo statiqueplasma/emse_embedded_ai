@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file    wine_quality.c
   * @author  AST Embedded Analytics Research Platform
-  * @date    Tue Nov  7 21:50:20 2023
+  * @date    Wed Nov  8 22:27:42 2023
   * @brief   AI Tool Automatic Code Generator for Embedded NN computing
   ******************************************************************************
   * @attention
@@ -35,14 +35,14 @@
 #define AI_NET_OBJ_INSTANCE g_wine_quality
  
 #undef AI_WINE_QUALITY_MODEL_SIGNATURE
-#define AI_WINE_QUALITY_MODEL_SIGNATURE     "7e895cd65e0849e392ddb36e29d83e2e"
+#define AI_WINE_QUALITY_MODEL_SIGNATURE     "722ca9d13779ab1f8217a1164b2ea102"
 
 #ifndef AI_TOOLS_REVISION_ID
 #define AI_TOOLS_REVISION_ID     ""
 #endif
 
 #undef AI_TOOLS_DATE_TIME
-#define AI_TOOLS_DATE_TIME   "Tue Nov  7 21:50:20 2023"
+#define AI_TOOLS_DATE_TIME   "Wed Nov  8 22:27:42 2023"
 
 #undef AI_TOOLS_COMPILE_TIME
 #define AI_TOOLS_COMPILE_TIME    __DATE__ " " __TIME__
