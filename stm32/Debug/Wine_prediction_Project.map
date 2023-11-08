@@ -8709,14 +8709,14 @@ LOAD C:/ST/STM32CubeIDE_1.9.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0000000008006d50       0x68 ./X-CUBE-AI/App/app_x-cube-ai.o
                 0x0000000008006d50                acquire_and_process_data
  .text.post_process
-                0x0000000008006db8       0x78 ./X-CUBE-AI/App/app_x-cube-ai.o
+                0x0000000008006db8       0x90 ./X-CUBE-AI/App/app_x-cube-ai.o
                 0x0000000008006db8                post_process
  .text.MX_X_CUBE_AI_Init
-                0x0000000008006e30       0x1c ./X-CUBE-AI/App/app_x-cube-ai.o
-                0x0000000008006e30                MX_X_CUBE_AI_Init
+                0x0000000008006e48       0x1c ./X-CUBE-AI/App/app_x-cube-ai.o
+                0x0000000008006e48                MX_X_CUBE_AI_Init
  .text.MX_X_CUBE_AI_Process
-                0x0000000008006e4c       0xb4 ./X-CUBE-AI/App/app_x-cube-ai.o
-                0x0000000008006e4c                MX_X_CUBE_AI_Process
+                0x0000000008006e64       0x9c ./X-CUBE-AI/App/app_x-cube-ai.o
+                0x0000000008006e64                MX_X_CUBE_AI_Process
  .text.wine_quality_configure_activations
                 0x0000000008006f00      0x104 ./X-CUBE-AI/App/wine_quality.o
  .text.wine_quality_configure_weights
@@ -9031,43 +9031,43 @@ LOAD C:/ST/STM32CubeIDE_1.9.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.exte
 .rodata         0x000000000800a8c0     0xabfc
                 0x000000000800a8c0                . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x000000000800a8c0       0xe7 ./X-CUBE-AI/App/app_x-cube-ai.o
- *fill*         0x000000000800a9a7        0x1 
- .rodata        0x000000000800a9a8       0x30 ./X-CUBE-AI/App/wine_quality_data.o
+ .rodata        0x000000000800a8c0       0xeb ./X-CUBE-AI/App/app_x-cube-ai.o
+ *fill*         0x000000000800a9ab        0x1 
+ .rodata        0x000000000800a9ac       0x30 ./X-CUBE-AI/App/wine_quality_data.o
  *(.rodata*)
  .rodata.AHBPrescTable
-                0x000000000800a9d8       0x10 ./Core/Src/system_stm32l4xx.o
-                0x000000000800a9d8                AHBPrescTable
+                0x000000000800a9dc       0x10 ./Core/Src/system_stm32l4xx.o
+                0x000000000800a9dc                AHBPrescTable
  .rodata.APBPrescTable
-                0x000000000800a9e8        0x8 ./Core/Src/system_stm32l4xx.o
-                0x000000000800a9e8                APBPrescTable
+                0x000000000800a9ec        0x8 ./Core/Src/system_stm32l4xx.o
+                0x000000000800a9ec                APBPrescTable
  .rodata.MSIRangeTable
-                0x000000000800a9f0       0x30 ./Core/Src/system_stm32l4xx.o
-                0x000000000800a9f0                MSIRangeTable
+                0x000000000800a9f4       0x30 ./Core/Src/system_stm32l4xx.o
+                0x000000000800a9f4                MSIRangeTable
  .rodata.UARTPrescTable
-                0x000000000800aa20       0x18 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.o
-                0x000000000800aa20                UARTPrescTable
+                0x000000000800aa24       0x18 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.o
+                0x000000000800aa24                UARTPrescTable
  .rodata.numerator.1
-                0x000000000800aa38        0x8 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.o
+                0x000000000800aa3c        0x8 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.o
  .rodata.denominator.0
-                0x000000000800aa40        0x8 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.o
+                0x000000000800aa44        0x8 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.o
  .rodata.dense_7_chain
-                0x000000000800aa48        0x8 ./X-CUBE-AI/App/wine_quality.o
+                0x000000000800aa4c        0x8 ./X-CUBE-AI/App/wine_quality.o
  .rodata.dense_7_dense_chain
-                0x000000000800aa50        0x8 ./X-CUBE-AI/App/wine_quality.o
+                0x000000000800aa54        0x8 ./X-CUBE-AI/App/wine_quality.o
  .rodata.dense_6_chain
-                0x000000000800aa58        0x8 ./X-CUBE-AI/App/wine_quality.o
+                0x000000000800aa5c        0x8 ./X-CUBE-AI/App/wine_quality.o
  .rodata.dense_6_dense_chain
-                0x000000000800aa60        0x8 ./X-CUBE-AI/App/wine_quality.o
+                0x000000000800aa64        0x8 ./X-CUBE-AI/App/wine_quality.o
  .rodata.dense_5_chain
-                0x000000000800aa68        0x8 ./X-CUBE-AI/App/wine_quality.o
+                0x000000000800aa6c        0x8 ./X-CUBE-AI/App/wine_quality.o
  .rodata.dense_5_dense_chain
-                0x000000000800aa70        0x8 ./X-CUBE-AI/App/wine_quality.o
+                0x000000000800aa74        0x8 ./X-CUBE-AI/App/wine_quality.o
  .rodata.dense_4_chain
-                0x000000000800aa78        0x8 ./X-CUBE-AI/App/wine_quality.o
+                0x000000000800aa7c        0x8 ./X-CUBE-AI/App/wine_quality.o
  .rodata.dense_4_dense_chain
-                0x000000000800aa80        0x8 ./X-CUBE-AI/App/wine_quality.o
- *fill*         0x000000000800aa88       0x18 
+                0x000000000800aa84        0x8 ./X-CUBE-AI/App/wine_quality.o
+ *fill*         0x000000000800aa8c       0x14 
  .rodata.s_wine_quality_weights_array_u64
                 0x000000000800aaa0     0xa9d0 ./X-CUBE-AI/App/wine_quality_data_params.o
                 0x000000000800aaa0                s_wine_quality_weights_array_u64
@@ -9739,7 +9739,7 @@ LOAD C:/ST/STM32CubeIDE_1.9.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.exte
  .comment       0x0000000000000093       0x51 ../Middlewares/ST/AI/Lib\NetworkRuntime810_CM4_GCC.a(ai_datatypes_format.o)
  .comment       0x0000000000000093       0x51 ../Middlewares/ST/AI/Lib\NetworkRuntime810_CM4_GCC.a(ai_datatypes_internal.o)
 
-.debug_info     0x0000000000000000    0x1b3c5
+.debug_info     0x0000000000000000    0x1b3f8
  .debug_info    0x0000000000000000     0x2797 ./Core/Src/main.o
  .debug_info    0x0000000000002797     0x2be6 ./Core/Src/stm32l4xx_hal_msp.o
  .debug_info    0x000000000000537d      0x889 ./Core/Src/stm32l4xx_it.o
@@ -9763,12 +9763,12 @@ LOAD C:/ST/STM32CubeIDE_1.9.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_info    0x00000000000122a8     0x4875 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.o
  .debug_info    0x0000000000016b1d     0x1018 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.o
  .debug_info    0x0000000000017b35      0x782 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_fmc.o
- .debug_info    0x00000000000182b7      0xf1e ./X-CUBE-AI/App/app_x-cube-ai.o
- .debug_info    0x00000000000191d5     0x1a9e ./X-CUBE-AI/App/wine_quality.o
- .debug_info    0x000000000001ac73      0x601 ./X-CUBE-AI/App/wine_quality_data.o
- .debug_info    0x000000000001b274      0x151 ./X-CUBE-AI/App/wine_quality_data_params.o
+ .debug_info    0x00000000000182b7      0xf51 ./X-CUBE-AI/App/app_x-cube-ai.o
+ .debug_info    0x0000000000019208     0x1a9e ./X-CUBE-AI/App/wine_quality.o
+ .debug_info    0x000000000001aca6      0x601 ./X-CUBE-AI/App/wine_quality_data.o
+ .debug_info    0x000000000001b2a7      0x151 ./X-CUBE-AI/App/wine_quality_data_params.o
 
-.debug_abbrev   0x0000000000000000     0x38ba
+.debug_abbrev   0x0000000000000000     0x38a8
  .debug_abbrev  0x0000000000000000      0x308 ./Core/Src/main.o
  .debug_abbrev  0x0000000000000308      0x2f1 ./Core/Src/stm32l4xx_hal_msp.o
  .debug_abbrev  0x00000000000005f9      0x170 ./Core/Src/stm32l4xx_it.o
@@ -9792,10 +9792,10 @@ LOAD C:/ST/STM32CubeIDE_1.9.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_abbrev  0x000000000000285f      0x304 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.o
  .debug_abbrev  0x0000000000002b63      0x2d2 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.o
  .debug_abbrev  0x0000000000002e35      0x1a6 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_fmc.o
- .debug_abbrev  0x0000000000002fdb      0x2ce ./X-CUBE-AI/App/app_x-cube-ai.o
- .debug_abbrev  0x00000000000032a9      0x34a ./X-CUBE-AI/App/wine_quality.o
- .debug_abbrev  0x00000000000035f3      0x20e ./X-CUBE-AI/App/wine_quality_data.o
- .debug_abbrev  0x0000000000003801       0xb9 ./X-CUBE-AI/App/wine_quality_data_params.o
+ .debug_abbrev  0x0000000000002fdb      0x2bc ./X-CUBE-AI/App/app_x-cube-ai.o
+ .debug_abbrev  0x0000000000003297      0x34a ./X-CUBE-AI/App/wine_quality.o
+ .debug_abbrev  0x00000000000035e1      0x20e ./X-CUBE-AI/App/wine_quality_data.o
+ .debug_abbrev  0x00000000000037ef       0xb9 ./X-CUBE-AI/App/wine_quality_data_params.o
 
 .debug_aranges  0x0000000000000000     0x1460
  .debug_aranges
@@ -9854,7 +9854,7 @@ LOAD C:/ST/STM32CubeIDE_1.9.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0000000000001448       0x18 ./X-CUBE-AI/App/wine_quality_data_params.o
 
 .debug_rnglists
-                0x0000000000000000      0xfc4
+                0x0000000000000000      0xfc5
  .debug_rnglists
                 0x0000000000000000       0x62 ./Core/Src/main.o
  .debug_rnglists
@@ -9902,11 +9902,11 @@ LOAD C:/ST/STM32CubeIDE_1.9.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_rnglists
                 0x0000000000000ea9       0x5d ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_fmc.o
  .debug_rnglists
-                0x0000000000000f06       0x39 ./X-CUBE-AI/App/app_x-cube-ai.o
+                0x0000000000000f06       0x3a ./X-CUBE-AI/App/app_x-cube-ai.o
  .debug_rnglists
-                0x0000000000000f3f       0x60 ./X-CUBE-AI/App/wine_quality.o
+                0x0000000000000f40       0x60 ./X-CUBE-AI/App/wine_quality.o
  .debug_rnglists
-                0x0000000000000f9f       0x25 ./X-CUBE-AI/App/wine_quality_data.o
+                0x0000000000000fa0       0x25 ./X-CUBE-AI/App/wine_quality_data.o
 
 .debug_macro    0x0000000000000000    0x35d2d
  .debug_macro   0x0000000000000000      0x303 ./Core/Src/main.o
@@ -10055,7 +10055,7 @@ LOAD C:/ST/STM32CubeIDE_1.9.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_macro   0x0000000000035bfd       0x46 ./X-CUBE-AI/App/wine_quality_data.o
  .debug_macro   0x0000000000035c43       0xea ./X-CUBE-AI/App/wine_quality_data_params.o
 
-.debug_line     0x0000000000000000    0x1d0b0
+.debug_line     0x0000000000000000    0x1d0b2
  .debug_line    0x0000000000000000      0xf99 ./Core/Src/main.o
  .debug_line    0x0000000000000f99      0xce1 ./Core/Src/stm32l4xx_hal_msp.o
  .debug_line    0x0000000000001c7a      0x987 ./Core/Src/stm32l4xx_it.o
@@ -10079,12 +10079,12 @@ LOAD C:/ST/STM32CubeIDE_1.9.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_line    0x0000000000015130     0x3d17 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.o
  .debug_line    0x0000000000018e47      0xef8 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.o
  .debug_line    0x0000000000019d3f      0xb11 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_fmc.o
- .debug_line    0x000000000001a850      0xd8e ./X-CUBE-AI/App/app_x-cube-ai.o
- .debug_line    0x000000000001b5de      0xd9f ./X-CUBE-AI/App/wine_quality.o
- .debug_line    0x000000000001c37d      0x769 ./X-CUBE-AI/App/wine_quality_data.o
- .debug_line    0x000000000001cae6      0x5ca ./X-CUBE-AI/App/wine_quality_data_params.o
+ .debug_line    0x000000000001a850      0xd90 ./X-CUBE-AI/App/app_x-cube-ai.o
+ .debug_line    0x000000000001b5e0      0xd9f ./X-CUBE-AI/App/wine_quality.o
+ .debug_line    0x000000000001c37f      0x769 ./X-CUBE-AI/App/wine_quality_data.o
+ .debug_line    0x000000000001cae8      0x5ca ./X-CUBE-AI/App/wine_quality_data_params.o
 
-.debug_str      0x0000000000000000   0x13cc87
+.debug_str      0x0000000000000000   0x13cc91
  .debug_str     0x0000000000000000   0x12ab7a ./Core/Src/main.o
                                      0x12b0b4 (size before relaxing)
  .debug_str     0x000000000012ab7a      0x94e ./Core/Src/stm32l4xx_hal_msp.o
@@ -10131,13 +10131,13 @@ LOAD C:/ST/STM32CubeIDE_1.9.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.exte
                                      0x1250d8 (size before relaxing)
  .debug_str     0x00000000001317b6      0x451 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_fmc.o
                                      0x124df8 (size before relaxing)
- .debug_str     0x0000000000131c07     0x2fb9 ./X-CUBE-AI/App/app_x-cube-ai.o
-                                     0x12e302 (size before relaxing)
- .debug_str     0x0000000000134bc0     0x7f37 ./X-CUBE-AI/App/wine_quality.o
+ .debug_str     0x0000000000131c07     0x2fc3 ./X-CUBE-AI/App/app_x-cube-ai.o
+                                     0x12e306 (size before relaxing)
+ .debug_str     0x0000000000134bca     0x7f37 ./X-CUBE-AI/App/wine_quality.o
                                       0x137df (size before relaxing)
- .debug_str     0x000000000013caf7      0x143 ./X-CUBE-AI/App/wine_quality_data.o
+ .debug_str     0x000000000013cb01      0x143 ./X-CUBE-AI/App/wine_quality_data.o
                                        0xe88a (size before relaxing)
- .debug_str     0x000000000013cc3a       0x4d ./X-CUBE-AI/App/wine_quality_data_params.o
+ .debug_str     0x000000000013cc44       0x4d ./X-CUBE-AI/App/wine_quality_data_params.o
                                        0x7a2c (size before relaxing)
 
 .debug_frame    0x0000000000000000     0x5e2c

@@ -192,8 +192,6 @@ int acquire_and_process_data(ai_i8* data[])
 		  for ( k = 0; k < 4; k++){
 			((uint8_t *) data)[(i*4)+k] = tmp[k];
 		  }
-
-
 	  }
 
 
@@ -217,23 +215,23 @@ int post_process(ai_i8* data[])
 {
 /* process the predictions */
 	  uint8_t *output = data; // don't care about the signed value of ai_i8...
-	  int i;
+	  int i,j;
 
-	  uint8_t tmp[4] = {0};
-
-	  for (i=0; i < 4; i++){
-		  tmp[i] = output[i];
+	  char test[4];
+	  char sync[3] = "010";
+	  HAL_UART_Transmit(&huart2, (uint8_t *) sync, sizeof(sync), 100);
+	  for(i=0; i<7; i++){
+		  char tmp[4] = {0};
+		  for (j=0; j < 4; j++){
+		  		  tmp[j] = output[i*4+j];
+		  	  }
+		  HAL_UART_Transmit(&huart2, (uint8_t *) tmp, sizeof(tmp), 100);
 	  }
 
 	#ifdef _DEBUG
 	  float predicted_quality = *(float*) &tmp;
 	  printf("Predicted quality: %f\n", predicted_quality)
 	#endif
-
-	for (i=0; i < 4; i++){
-		tmp[i] = output[i];
-	}
-	HAL_UART_Transmit(&huart2, (uint8_t *) tmp, sizeof(tmp), 100);
 	  return 0;
 }
 /* USER CODE END 2 */
@@ -274,8 +272,6 @@ void MX_X_CUBE_AI_Process(void)
 	#endif
 
     do {
-    	uint8_t start[4] = "1234";
-    	  HAL_UART_Transmit(&huart2, (uint8_t *) start, sizeof(start), 100);
       /* 1 - acquire and pre-process input data */
       res = acquire_and_process_data(data_ins);
       /* 2 - process the data - call inference engine */

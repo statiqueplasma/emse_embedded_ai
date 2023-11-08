@@ -29,23 +29,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
  12 .comment      00000093  00000000  00000000  000309b8  2**0
                   CONTENTS, READONLY
- 13 .debug_info   0001b3c5  00000000  00000000  00030a4b  2**0
+ 13 .debug_info   0001b3f8  00000000  00000000  00030a4b  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_abbrev 000038ba  00000000  00000000  0004be10  2**0
+ 14 .debug_abbrev 000038a8  00000000  00000000  0004be43  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_aranges 00001460  00000000  00000000  0004f6d0  2**3
+ 15 .debug_aranges 00001460  00000000  00000000  0004f6f0  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_rnglists 00000fc4  00000000  00000000  00050b30  2**0
+ 16 .debug_rnglists 00000fc5  00000000  00000000  00050b50  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  00035d2d  00000000  00000000  00051af4  2**0
+ 17 .debug_macro  00035d2d  00000000  00000000  00051b15  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   0001d0b0  00000000  00000000  00087821  2**0
+ 18 .debug_line   0001d0b2  00000000  00000000  00087842  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    0013cc87  00000000  00000000  000a48d1  2**0
+ 19 .debug_str    0013cc91  00000000  00000000  000a48f4  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_frame  00005e2c  00000000  00000000  001e1558  2**2
+ 20 .debug_frame  00005e2c  00000000  00000000  001e1588  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 0000008e  00000000  00000000  001e7384  2**0
+ 21 .debug_line_str 0000008e  00000000  00000000  001e73b4  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -458,17 +458,17 @@ int main(void)
  80005c4:	f000 f9ae 	bl	8000924 <MX_USART3_UART_Init>
   //MX_USB_OTG_FS_PCD_Init();
   MX_X_CUBE_AI_Init();
- 80005c8:	f006 fc32 	bl	8006e30 <MX_X_CUBE_AI_Init>
+ 80005c8:	f006 fc3e 	bl	8006e48 <MX_X_CUBE_AI_Init>
   /* USER CODE BEGIN WHILE */
   while (1)
   {
     /* USER CODE END WHILE */
 
   MX_X_CUBE_AI_Process();
- 80005cc:	f006 fc3e 	bl	8006e4c <MX_X_CUBE_AI_Process>
+ 80005cc:	f006 fc4a 	bl	8006e64 <MX_X_CUBE_AI_Process>
     /* USER CODE BEGIN 3 */
   MX_X_CUBE_AI_Process();
- 80005d0:	f006 fc3c 	bl	8006e4c <MX_X_CUBE_AI_Process>
+ 80005d0:	f006 fc48 	bl	8006e64 <MX_X_CUBE_AI_Process>
   MX_X_CUBE_AI_Process();
  80005d4:	e7fa      	b.n	80005cc <main+0x30>
 
@@ -6293,7 +6293,7 @@ HAL_StatusTypeDef HAL_RCC_OscConfig(RCC_OscInitTypeDef  *RCC_OscInitStruct)
  8002648:	6013      	str	r3, [r2, #0]
  800264a:	e013      	b.n	8002674 <HAL_RCC_OscConfig+0x298>
  800264c:	40021000 	.word	0x40021000
- 8002650:	0800a9d8 	.word	0x0800a9d8
+ 8002650:	0800a9dc 	.word	0x0800a9dc
  8002654:	20000000 	.word	0x20000000
  8002658:	20000004 	.word	0x20000004
  800265c:	4ba0      	ldr	r3, [pc, #640]	; (80028e0 <HAL_RCC_OscConfig+0x504>)
@@ -7770,7 +7770,7 @@ HAL_StatusTypeDef HAL_RCC_ClockConfig(RCC_ClkInitTypeDef  *RCC_ClkInitStruct, ui
  8002e6c:	40022000 	.word	0x40022000
  8002e70:	40021000 	.word	0x40021000
  8002e74:	04c4b400 	.word	0x04c4b400
- 8002e78:	0800a9d8 	.word	0x0800a9d8
+ 8002e78:	0800a9dc 	.word	0x0800a9dc
  8002e7c:	20000000 	.word	0x20000000
  8002e80:	20000004 	.word	0x20000004
 
@@ -7975,7 +7975,7 @@ uint32_t HAL_RCC_GetSysClockFreq(void)
  8002f88:	4770      	bx	lr
  8002f8a:	bf00      	nop
  8002f8c:	40021000 	.word	0x40021000
- 8002f90:	0800a9f0 	.word	0x0800a9f0
+ 8002f90:	0800a9f4 	.word	0x0800a9f4
  8002f94:	00f42400 	.word	0x00f42400
 
 08002f98 <HAL_RCC_GetHCLKFreq>:
@@ -8023,7 +8023,7 @@ uint32_t HAL_RCC_GetPCLK1Freq(void)
  8002fd0:	4618      	mov	r0, r3
  8002fd2:	bd80      	pop	{r7, pc}
  8002fd4:	40021000 	.word	0x40021000
- 8002fd8:	0800a9e8 	.word	0x0800a9e8
+ 8002fd8:	0800a9ec 	.word	0x0800a9ec
 
 08002fdc <HAL_RCC_GetPCLK2Freq>:
   * @note   Each time PCLK2 changes, this function must be called to update the
@@ -8050,7 +8050,7 @@ uint32_t HAL_RCC_GetPCLK2Freq(void)
  8002ffc:	4618      	mov	r0, r3
  8002ffe:	bd80      	pop	{r7, pc}
  8003000:	40021000 	.word	0x40021000
- 8003004:	0800a9e8 	.word	0x0800a9e8
+ 8003004:	0800a9ec 	.word	0x0800a9ec
 
 08003008 <RCC_SetFlashLatencyFromMSIRange>:
             voltage range.
@@ -8331,7 +8331,7 @@ static uint32_t RCC_GetSysClockFreqFromPLLSource(void)
  8003176:	4770      	bx	lr
  8003178:	40021000 	.word	0x40021000
  800317c:	00f42400 	.word	0x00f42400
- 8003180:	0800a9f0 	.word	0x0800a9f0
+ 8003180:	0800a9f4 	.word	0x0800a9f4
 
 08003184 <HAL_RCCEx_PeriphCLKConfig>:
   *         the RTC clock source: in this case the access to Backup domain is enabled.
@@ -9957,7 +9957,7 @@ uint32_t HAL_RCCEx_GetPeriphCLKFreq(uint32_t PeriphClk)
  8003b90:	f000 bd9b 	b.w	80046ca <HAL_RCCEx_GetPeriphCLKFreq+0xe26>
  8003b94:	40021000 	.word	0x40021000
  8003b98:	0007a120 	.word	0x0007a120
- 8003b9c:	0800a9f0 	.word	0x0800a9f0
+ 8003b9c:	0800a9f4 	.word	0x0800a9f4
  8003ba0:	00f42400 	.word	0x00f42400
       frequency = RCCEx_GetSAIxPeriphCLKFreq(RCC_PERIPHCLK_SAI1, pllvco);
  8003ba4:	69b9      	ldr	r1, [r7, #24]
@@ -10251,7 +10251,7 @@ uint32_t HAL_RCCEx_GetPeriphCLKFreq(uint32_t PeriphClk)
  8003e2c:	e06c      	b.n	8003f08 <HAL_RCCEx_GetPeriphCLKFreq+0x664>
  8003e2e:	bf00      	nop
  8003e30:	40021000 	.word	0x40021000
- 8003e34:	0800a9f0 	.word	0x0800a9f0
+ 8003e34:	0800a9f4 	.word	0x0800a9f4
  8003e38:	02dc6c00 	.word	0x02dc6c00
           if(HAL_IS_BIT_SET(RCC->CR, RCC_CR_PLLRDY))
  8003e3c:	4ba5      	ldr	r3, [pc, #660]	; (80040d4 <HAL_RCCEx_GetPeriphCLKFreq+0x830>)
@@ -10913,7 +10913,7 @@ uint32_t HAL_RCCEx_GetPeriphCLKFreq(uint32_t PeriphClk)
  800434e:	bf00      	nop
  8004350:	40021000 	.word	0x40021000
  8004354:	00f42400 	.word	0x00f42400
- 8004358:	0800a9f0 	.word	0x0800a9f0
+ 8004358:	0800a9f4 	.word	0x0800a9f4
         srcclk = __HAL_RCC_GET_I2C1_SOURCE();
  800435c:	4b96      	ldr	r3, [pc, #600]	; (80045b8 <HAL_RCCEx_GetPeriphCLKFreq+0xd14>)
  800435e:	f8d3 3088 	ldr.w	r3, [r3, #136]	; 0x88
@@ -11386,7 +11386,7 @@ uint32_t HAL_RCCEx_GetPeriphCLKFreq(uint32_t PeriphClk)
  80046d8:	bd80      	pop	{r7, pc}
  80046da:	bf00      	nop
  80046dc:	40021000 	.word	0x40021000
- 80046e0:	0800a9f0 	.word	0x0800a9f0
+ 80046e0:	0800a9f4 	.word	0x0800a9f4
 
 080046e4 <RCCEx_PLLSAI1_Config>:
   * @note   PLLSAI1 is temporary disable to apply new parameters
@@ -16036,7 +16036,7 @@ HAL_StatusTypeDef UART_SetConfig(UART_HandleTypeDef *huart)
  8006272:	bf00      	nop
  8006274:	40008000 	.word	0x40008000
  8006278:	00f42400 	.word	0x00f42400
- 800627c:	0800aa20 	.word	0x0800aa20
+ 800627c:	0800aa24 	.word	0x0800aa24
       }
       else
       {
@@ -17346,8 +17346,8 @@ static void UARTEx_SetNbDataToProcess(UART_HandleTypeDef *huart)
  8006998:	f85d 7b04 	ldr.w	r7, [sp], #4
  800699c:	4770      	bx	lr
  800699e:	bf00      	nop
- 80069a0:	0800aa38 	.word	0x0800aa38
- 80069a4:	0800aa40 	.word	0x0800aa40
+ 80069a0:	0800aa3c 	.word	0x0800aa3c
+ 80069a4:	0800aa44 	.word	0x0800aa44
 
 080069a8 <FMC_NORSRAM_Init>:
   * @param  Init Pointer to NORSRAM Initialization structure
@@ -18070,224 +18070,223 @@ int acquire_and_process_data(ai_i8* data[])
 int post_process(ai_i8* data[])
 {
  8006db8:	b580      	push	{r7, lr}
- 8006dba:	b086      	sub	sp, #24
+ 8006dba:	b088      	sub	sp, #32
  8006dbc:	af00      	add	r7, sp, #0
  8006dbe:	6078      	str	r0, [r7, #4]
 /* process the predictions */
 	  uint8_t *output = data; // don't care about the signed value of ai_i8...
  8006dc0:	687b      	ldr	r3, [r7, #4]
- 8006dc2:	613b      	str	r3, [r7, #16]
-	  int i;
+ 8006dc2:	617b      	str	r3, [r7, #20]
+	  int i,j;
 
-	  uint8_t tmp[4] = {0};
- 8006dc4:	2300      	movs	r3, #0
- 8006dc6:	60fb      	str	r3, [r7, #12]
+	  char test[4];
+	  char sync[3] = "010";
+ 8006dc4:	4a1e      	ldr	r2, [pc, #120]	; (8006e40 <post_process+0x88>)
+ 8006dc6:	f107 030c 	add.w	r3, r7, #12
+ 8006dca:	6812      	ldr	r2, [r2, #0]
+ 8006dcc:	4611      	mov	r1, r2
+ 8006dce:	8019      	strh	r1, [r3, #0]
+ 8006dd0:	3302      	adds	r3, #2
+ 8006dd2:	0c12      	lsrs	r2, r2, #16
+ 8006dd4:	701a      	strb	r2, [r3, #0]
+	  HAL_UART_Transmit(&huart2, (uint8_t *) sync, sizeof(sync), 100);
+ 8006dd6:	f107 010c 	add.w	r1, r7, #12
+ 8006dda:	2364      	movs	r3, #100	; 0x64
+ 8006ddc:	2203      	movs	r2, #3
+ 8006dde:	4819      	ldr	r0, [pc, #100]	; (8006e44 <post_process+0x8c>)
+ 8006de0:	f7fe facd 	bl	800537e <HAL_UART_Transmit>
+	  for(i=0; i<7; i++){
+ 8006de4:	2300      	movs	r3, #0
+ 8006de6:	61fb      	str	r3, [r7, #28]
+ 8006de8:	e022      	b.n	8006e30 <post_process+0x78>
+		  char tmp[4] = {0};
+ 8006dea:	2300      	movs	r3, #0
+ 8006dec:	60bb      	str	r3, [r7, #8]
+		  for (j=0; j < 4; j++){
+ 8006dee:	2300      	movs	r3, #0
+ 8006df0:	61bb      	str	r3, [r7, #24]
+ 8006df2:	e010      	b.n	8006e16 <post_process+0x5e>
+		  		  tmp[j] = output[i*4+j];
+ 8006df4:	69fb      	ldr	r3, [r7, #28]
+ 8006df6:	009a      	lsls	r2, r3, #2
+ 8006df8:	69bb      	ldr	r3, [r7, #24]
+ 8006dfa:	4413      	add	r3, r2
+ 8006dfc:	461a      	mov	r2, r3
+ 8006dfe:	697b      	ldr	r3, [r7, #20]
+ 8006e00:	4413      	add	r3, r2
+ 8006e02:	7819      	ldrb	r1, [r3, #0]
+ 8006e04:	f107 0208 	add.w	r2, r7, #8
+ 8006e08:	69bb      	ldr	r3, [r7, #24]
+ 8006e0a:	4413      	add	r3, r2
+ 8006e0c:	460a      	mov	r2, r1
+ 8006e0e:	701a      	strb	r2, [r3, #0]
+		  for (j=0; j < 4; j++){
+ 8006e10:	69bb      	ldr	r3, [r7, #24]
+ 8006e12:	3301      	adds	r3, #1
+ 8006e14:	61bb      	str	r3, [r7, #24]
+ 8006e16:	69bb      	ldr	r3, [r7, #24]
+ 8006e18:	2b03      	cmp	r3, #3
+ 8006e1a:	ddeb      	ble.n	8006df4 <post_process+0x3c>
+		  	  }
+		  HAL_UART_Transmit(&huart2, (uint8_t *) tmp, sizeof(tmp), 100);
+ 8006e1c:	f107 0108 	add.w	r1, r7, #8
+ 8006e20:	2364      	movs	r3, #100	; 0x64
+ 8006e22:	2204      	movs	r2, #4
+ 8006e24:	4807      	ldr	r0, [pc, #28]	; (8006e44 <post_process+0x8c>)
+ 8006e26:	f7fe faaa 	bl	800537e <HAL_UART_Transmit>
+	  for(i=0; i<7; i++){
+ 8006e2a:	69fb      	ldr	r3, [r7, #28]
+ 8006e2c:	3301      	adds	r3, #1
+ 8006e2e:	61fb      	str	r3, [r7, #28]
+ 8006e30:	69fb      	ldr	r3, [r7, #28]
+ 8006e32:	2b06      	cmp	r3, #6
+ 8006e34:	ddd9      	ble.n	8006dea <post_process+0x32>
 
-	  for (i=0; i < 4; i++){
- 8006dc8:	2300      	movs	r3, #0
- 8006dca:	617b      	str	r3, [r7, #20]
- 8006dcc:	e00c      	b.n	8006de8 <post_process+0x30>
-		  tmp[i] = output[i];
- 8006dce:	697b      	ldr	r3, [r7, #20]
- 8006dd0:	693a      	ldr	r2, [r7, #16]
- 8006dd2:	4413      	add	r3, r2
- 8006dd4:	7819      	ldrb	r1, [r3, #0]
- 8006dd6:	f107 020c 	add.w	r2, r7, #12
- 8006dda:	697b      	ldr	r3, [r7, #20]
- 8006ddc:	4413      	add	r3, r2
- 8006dde:	460a      	mov	r2, r1
- 8006de0:	701a      	strb	r2, [r3, #0]
-	  for (i=0; i < 4; i++){
- 8006de2:	697b      	ldr	r3, [r7, #20]
- 8006de4:	3301      	adds	r3, #1
- 8006de6:	617b      	str	r3, [r7, #20]
- 8006de8:	697b      	ldr	r3, [r7, #20]
- 8006dea:	2b03      	cmp	r3, #3
- 8006dec:	ddef      	ble.n	8006dce <post_process+0x16>
 	#ifdef _DEBUG
 	  float predicted_quality = *(float*) &tmp;
 	  printf("Predicted quality: %f\n", predicted_quality)
 	#endif
-
-	for (i=0; i < 4; i++){
- 8006dee:	2300      	movs	r3, #0
- 8006df0:	617b      	str	r3, [r7, #20]
- 8006df2:	e00c      	b.n	8006e0e <post_process+0x56>
-		tmp[i] = output[i];
- 8006df4:	697b      	ldr	r3, [r7, #20]
- 8006df6:	693a      	ldr	r2, [r7, #16]
- 8006df8:	4413      	add	r3, r2
- 8006dfa:	7819      	ldrb	r1, [r3, #0]
- 8006dfc:	f107 020c 	add.w	r2, r7, #12
- 8006e00:	697b      	ldr	r3, [r7, #20]
- 8006e02:	4413      	add	r3, r2
- 8006e04:	460a      	mov	r2, r1
- 8006e06:	701a      	strb	r2, [r3, #0]
-	for (i=0; i < 4; i++){
- 8006e08:	697b      	ldr	r3, [r7, #20]
- 8006e0a:	3301      	adds	r3, #1
- 8006e0c:	617b      	str	r3, [r7, #20]
- 8006e0e:	697b      	ldr	r3, [r7, #20]
- 8006e10:	2b03      	cmp	r3, #3
- 8006e12:	ddef      	ble.n	8006df4 <post_process+0x3c>
-	}
-	HAL_UART_Transmit(&huart2, (uint8_t *) tmp, sizeof(tmp), 100);
- 8006e14:	f107 010c 	add.w	r1, r7, #12
- 8006e18:	2364      	movs	r3, #100	; 0x64
- 8006e1a:	2204      	movs	r2, #4
- 8006e1c:	4803      	ldr	r0, [pc, #12]	; (8006e2c <post_process+0x74>)
- 8006e1e:	f7fe faae 	bl	800537e <HAL_UART_Transmit>
 	  return 0;
- 8006e22:	2300      	movs	r3, #0
+ 8006e36:	2300      	movs	r3, #0
 }
- 8006e24:	4618      	mov	r0, r3
- 8006e26:	3718      	adds	r7, #24
- 8006e28:	46bd      	mov	sp, r7
- 8006e2a:	bd80      	pop	{r7, pc}
- 8006e2c:	20000b2c 	.word	0x20000b2c
+ 8006e38:	4618      	mov	r0, r3
+ 8006e3a:	3720      	adds	r7, #32
+ 8006e3c:	46bd      	mov	sp, r7
+ 8006e3e:	bd80      	pop	{r7, pc}
+ 8006e40:	0800a958 	.word	0x0800a958
+ 8006e44:	20000b2c 	.word	0x20000b2c
 
-08006e30 <MX_X_CUBE_AI_Init>:
+08006e48 <MX_X_CUBE_AI_Init>:
 /* USER CODE END 2 */
 
 /* Entry points --------------------------------------------------------------*/
 
 void MX_X_CUBE_AI_Init(void)
 {
- 8006e30:	b580      	push	{r7, lr}
- 8006e32:	af00      	add	r7, sp, #0
+ 8006e48:	b580      	push	{r7, lr}
+ 8006e4a:	af00      	add	r7, sp, #0
     /* USER CODE BEGIN 5 */
   printf("\r\nTEMPLATE - initialization\r\n");
- 8006e34:	4803      	ldr	r0, [pc, #12]	; (8006e44 <MX_X_CUBE_AI_Init+0x14>)
- 8006e36:	f002 fc79 	bl	800972c <puts>
+ 8006e4c:	4803      	ldr	r0, [pc, #12]	; (8006e5c <MX_X_CUBE_AI_Init+0x14>)
+ 8006e4e:	f002 fc6d 	bl	800972c <puts>
 
   ai_boostrap(data_activations0);
- 8006e3a:	4803      	ldr	r0, [pc, #12]	; (8006e48 <MX_X_CUBE_AI_Init+0x18>)
- 8006e3c:	f7ff fefa 	bl	8006c34 <ai_boostrap>
+ 8006e52:	4803      	ldr	r0, [pc, #12]	; (8006e60 <MX_X_CUBE_AI_Init+0x18>)
+ 8006e54:	f7ff feee 	bl	8006c34 <ai_boostrap>
     /* USER CODE END 5 */
 }
- 8006e40:	bf00      	nop
- 8006e42:	bd80      	pop	{r7, pc}
- 8006e44:	0800a958 	.word	0x0800a958
- 8006e48:	2000000c 	.word	0x2000000c
+ 8006e58:	bf00      	nop
+ 8006e5a:	bd80      	pop	{r7, pc}
+ 8006e5c:	0800a95c 	.word	0x0800a95c
+ 8006e60:	2000000c 	.word	0x2000000c
 
-08006e4c <MX_X_CUBE_AI_Process>:
+08006e64 <MX_X_CUBE_AI_Process>:
 
 void MX_X_CUBE_AI_Process(void)
 {
- 8006e4c:	b580      	push	{r7, lr}
- 8006e4e:	b086      	sub	sp, #24
- 8006e50:	af00      	add	r7, sp, #0
+ 8006e64:	b580      	push	{r7, lr}
+ 8006e66:	b084      	sub	sp, #16
+ 8006e68:	af00      	add	r7, sp, #0
     /* USER CODE BEGIN 6 */
   int res = -1;
- 8006e52:	f04f 33ff 	mov.w	r3, #4294967295
- 8006e56:	617b      	str	r3, [r7, #20]
+ 8006e6a:	f04f 33ff 	mov.w	r3, #4294967295
+ 8006e6e:	60fb      	str	r3, [r7, #12]
   uint8_t *in_data = NULL;
- 8006e58:	2300      	movs	r3, #0
- 8006e5a:	613b      	str	r3, [r7, #16]
+ 8006e70:	2300      	movs	r3, #0
+ 8006e72:	60bb      	str	r3, [r7, #8]
   uint8_t *out_data = NULL;
- 8006e5c:	2300      	movs	r3, #0
- 8006e5e:	60fb      	str	r3, [r7, #12]
+ 8006e74:	2300      	movs	r3, #0
+ 8006e76:	607b      	str	r3, [r7, #4]
   printf("TEMPLATE - run - main loop\r\n");
- 8006e60:	481e      	ldr	r0, [pc, #120]	; (8006edc <MX_X_CUBE_AI_Process+0x90>)
- 8006e62:	f002 fc63 	bl	800972c <puts>
+ 8006e78:	481a      	ldr	r0, [pc, #104]	; (8006ee4 <MX_X_CUBE_AI_Process+0x80>)
+ 8006e7a:	f002 fc57 	bl	800972c <puts>
 
 
 
   if (wine_quality) {
- 8006e66:	4b1e      	ldr	r3, [pc, #120]	; (8006ee0 <MX_X_CUBE_AI_Process+0x94>)
- 8006e68:	681b      	ldr	r3, [r3, #0]
- 8006e6a:	2b00      	cmp	r3, #0
- 8006e6c:	d024      	beq.n	8006eb8 <MX_X_CUBE_AI_Process+0x6c>
+ 8006e7e:	4b1a      	ldr	r3, [pc, #104]	; (8006ee8 <MX_X_CUBE_AI_Process+0x84>)
+ 8006e80:	681b      	ldr	r3, [r3, #0]
+ 8006e82:	2b00      	cmp	r3, #0
+ 8006e84:	d01b      	beq.n	8006ebe <MX_X_CUBE_AI_Process+0x5a>
   // set pointer on NN buffer
 	#if defined(AI_WINE_QUALITY_INPUTS_IN_ACTIVATIONS)
 	  in_data = ai_input[0].data;
- 8006e6e:	4b1d      	ldr	r3, [pc, #116]	; (8006ee4 <MX_X_CUBE_AI_Process+0x98>)
- 8006e70:	681b      	ldr	r3, [r3, #0]
- 8006e72:	685b      	ldr	r3, [r3, #4]
- 8006e74:	613b      	str	r3, [r7, #16]
+ 8006e86:	4b19      	ldr	r3, [pc, #100]	; (8006eec <MX_X_CUBE_AI_Process+0x88>)
+ 8006e88:	681b      	ldr	r3, [r3, #0]
+ 8006e8a:	685b      	ldr	r3, [r3, #4]
+ 8006e8c:	60bb      	str	r3, [r7, #8]
 	#else
 	  in_data = in_data_s;
 	#endif
 
 	#if defined(AI_WINE_QUALITY_OUTPUTS_IN_ACTIVATIONS)
 	  out_data = ai_output[0].data;
- 8006e76:	4b1c      	ldr	r3, [pc, #112]	; (8006ee8 <MX_X_CUBE_AI_Process+0x9c>)
- 8006e78:	681b      	ldr	r3, [r3, #0]
- 8006e7a:	685b      	ldr	r3, [r3, #4]
- 8006e7c:	60fb      	str	r3, [r7, #12]
-	#else
+ 8006e8e:	4b18      	ldr	r3, [pc, #96]	; (8006ef0 <MX_X_CUBE_AI_Process+0x8c>)
+ 8006e90:	681b      	ldr	r3, [r3, #0]
+ 8006e92:	685b      	ldr	r3, [r3, #4]
+ 8006e94:	607b      	str	r3, [r7, #4]
 	  out_data = out_data_s;
 	#endif
 
     do {
-    	uint8_t start[4] = "1234";
- 8006e7e:	4b1b      	ldr	r3, [pc, #108]	; (8006eec <MX_X_CUBE_AI_Process+0xa0>)
- 8006e80:	60bb      	str	r3, [r7, #8]
-    	  HAL_UART_Transmit(&huart2, (uint8_t *) start, sizeof(start), 100);
- 8006e82:	f107 0108 	add.w	r1, r7, #8
- 8006e86:	2364      	movs	r3, #100	; 0x64
- 8006e88:	2204      	movs	r2, #4
- 8006e8a:	4819      	ldr	r0, [pc, #100]	; (8006ef0 <MX_X_CUBE_AI_Process+0xa4>)
- 8006e8c:	f7fe fa77 	bl	800537e <HAL_UART_Transmit>
       /* 1 - acquire and pre-process input data */
       res = acquire_and_process_data(data_ins);
- 8006e90:	4818      	ldr	r0, [pc, #96]	; (8006ef4 <MX_X_CUBE_AI_Process+0xa8>)
- 8006e92:	f7ff ff5d 	bl	8006d50 <acquire_and_process_data>
- 8006e96:	6178      	str	r0, [r7, #20]
+ 8006e96:	4817      	ldr	r0, [pc, #92]	; (8006ef4 <MX_X_CUBE_AI_Process+0x90>)
+ 8006e98:	f7ff ff5a 	bl	8006d50 <acquire_and_process_data>
+ 8006e9c:	60f8      	str	r0, [r7, #12]
       /* 2 - process the data - call inference engine */
       if (res == 0)
- 8006e98:	697b      	ldr	r3, [r7, #20]
- 8006e9a:	2b00      	cmp	r3, #0
- 8006e9c:	d102      	bne.n	8006ea4 <MX_X_CUBE_AI_Process+0x58>
+ 8006e9e:	68fb      	ldr	r3, [r7, #12]
+ 8006ea0:	2b00      	cmp	r3, #0
+ 8006ea2:	d102      	bne.n	8006eaa <MX_X_CUBE_AI_Process+0x46>
         res = ai_run();
- 8006e9e:	f7ff ff2d 	bl	8006cfc <ai_run>
- 8006ea2:	6178      	str	r0, [r7, #20]
+ 8006ea4:	f7ff ff2a 	bl	8006cfc <ai_run>
+ 8006ea8:	60f8      	str	r0, [r7, #12]
       /* 3- post-process the predictions */
       if (res == 0)
- 8006ea4:	697b      	ldr	r3, [r7, #20]
- 8006ea6:	2b00      	cmp	r3, #0
- 8006ea8:	d103      	bne.n	8006eb2 <MX_X_CUBE_AI_Process+0x66>
+ 8006eaa:	68fb      	ldr	r3, [r7, #12]
+ 8006eac:	2b00      	cmp	r3, #0
+ 8006eae:	d103      	bne.n	8006eb8 <MX_X_CUBE_AI_Process+0x54>
         res = post_process(data_outs);
- 8006eaa:	4813      	ldr	r0, [pc, #76]	; (8006ef8 <MX_X_CUBE_AI_Process+0xac>)
- 8006eac:	f7ff ff84 	bl	8006db8 <post_process>
- 8006eb0:	6178      	str	r0, [r7, #20]
+ 8006eb0:	4811      	ldr	r0, [pc, #68]	; (8006ef8 <MX_X_CUBE_AI_Process+0x94>)
+ 8006eb2:	f7ff ff81 	bl	8006db8 <post_process>
+ 8006eb6:	60f8      	str	r0, [r7, #12]
     } while (res==0);
- 8006eb2:	697b      	ldr	r3, [r7, #20]
- 8006eb4:	2b00      	cmp	r3, #0
- 8006eb6:	d0e2      	beq.n	8006e7e <MX_X_CUBE_AI_Process+0x32>
+ 8006eb8:	68fb      	ldr	r3, [r7, #12]
+ 8006eba:	2b00      	cmp	r3, #0
+ 8006ebc:	d0eb      	beq.n	8006e96 <MX_X_CUBE_AI_Process+0x32>
   }
 
   if (res) {
- 8006eb8:	697b      	ldr	r3, [r7, #20]
- 8006eba:	2b00      	cmp	r3, #0
- 8006ebc:	d00a      	beq.n	8006ed4 <MX_X_CUBE_AI_Process+0x88>
+ 8006ebe:	68fb      	ldr	r3, [r7, #12]
+ 8006ec0:	2b00      	cmp	r3, #0
+ 8006ec2:	d00a      	beq.n	8006eda <MX_X_CUBE_AI_Process+0x76>
     ai_error err = {AI_ERROR_INVALID_STATE, AI_ERROR_CODE_NETWORK};
- 8006ebe:	2311      	movs	r3, #17
- 8006ec0:	713b      	strb	r3, [r7, #4]
- 8006ec2:	687b      	ldr	r3, [r7, #4]
- 8006ec4:	2210      	movs	r2, #16
- 8006ec6:	f362 231f 	bfi	r3, r2, #8, #24
- 8006eca:	607b      	str	r3, [r7, #4]
+ 8006ec4:	2311      	movs	r3, #17
+ 8006ec6:	703b      	strb	r3, [r7, #0]
+ 8006ec8:	683b      	ldr	r3, [r7, #0]
+ 8006eca:	2210      	movs	r2, #16
+ 8006ecc:	f362 231f 	bfi	r3, r2, #8, #24
+ 8006ed0:	603b      	str	r3, [r7, #0]
     ai_log_err(err, "Process has FAILED");
- 8006ecc:	490b      	ldr	r1, [pc, #44]	; (8006efc <MX_X_CUBE_AI_Process+0xb0>)
- 8006ece:	6878      	ldr	r0, [r7, #4]
- 8006ed0:	f7ff fe90 	bl	8006bf4 <ai_log_err>
+ 8006ed2:	490a      	ldr	r1, [pc, #40]	; (8006efc <MX_X_CUBE_AI_Process+0x98>)
+ 8006ed4:	6838      	ldr	r0, [r7, #0]
+ 8006ed6:	f7ff fe8d 	bl	8006bf4 <ai_log_err>
   }
     /* USER CODE END 6 */
 }
- 8006ed4:	bf00      	nop
- 8006ed6:	3718      	adds	r7, #24
- 8006ed8:	46bd      	mov	sp, r7
- 8006eda:	bd80      	pop	{r7, pc}
- 8006edc:	0800a978 	.word	0x0800a978
- 8006ee0:	20000f90 	.word	0x20000f90
- 8006ee4:	20000f94 	.word	0x20000f94
- 8006ee8:	20000f98 	.word	0x20000f98
- 8006eec:	34333231 	.word	0x34333231
- 8006ef0:	20000b2c 	.word	0x20000b2c
+ 8006eda:	bf00      	nop
+ 8006edc:	3710      	adds	r7, #16
+ 8006ede:	46bd      	mov	sp, r7
+ 8006ee0:	bd80      	pop	{r7, pc}
+ 8006ee2:	bf00      	nop
+ 8006ee4:	0800a97c 	.word	0x0800a97c
+ 8006ee8:	20000f90 	.word	0x20000f90
+ 8006eec:	20000f94 	.word	0x20000f94
+ 8006ef0:	20000f98 	.word	0x20000f98
  8006ef4:	20000cb4 	.word	0x20000cb4
  8006ef8:	20000cb8 	.word	0x20000cb8
- 8006efc:	0800a994 	.word	0x0800a994
+ 8006efc:	0800a998 	.word	0x0800a998
 
 08006f00 <wine_quality_configure_activations>:
 
@@ -19067,8 +19066,8 @@ ai_bool ai_wine_quality_data_params_get(ai_network_params* params)
  80073ee:	3718      	adds	r7, #24
  80073f0:	46bd      	mov	sp, r7
  80073f2:	bd80      	pop	{r7, pc}
- 80073f4:	0800a9c8 	.word	0x0800a9c8
- 80073f8:	0800a9d0 	.word	0x0800a9d0
+ 80073f4:	0800a9cc 	.word	0x0800a9cc
+ 80073f8:	0800a9d4 	.word	0x0800a9d4
 
 080073fc <ai_buffer_get_size>:
  80073fc:	b378      	cbz	r0, 800745e <ai_buffer_get_size+0x62>
