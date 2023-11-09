@@ -1,14 +1,26 @@
 # WINE QUALITY PREDICTION
 
-## Table of content
+## TABLE OF CONTENT
+
+[1. OVERVIEW](#overview)  
+
+[2. MODEL TRAINING AND ADVERSARIAL ATTACKS](#model-training-and-adversarial-attacks)
+
+[3. MODEL IMPORTATION AND IMPLEMENTATION](#model-importation-and-implementation)
+
+[4. STM32 SERIAL COMMUNICATION](#stm32-serial-communication)
+
+[5. CONCLUSION](#conclusion)
 
 ## OVERVIEW
 
 This project focuses on the implementation of neural network model for wine quality prediction in a STM32L4R9 board, using Keras library to train the NN model, and X-Cube-AI extension of STM32Cube to implement the model on our board. And in the end we will do adversarial attacks to test the security and the safety of our model
 
+## MODEL TRAINING AND ADVERSARIAL ATTACKS
+
 The model training and attack are described in the Jupyter file "wine_quality_prediction.ipynb". Here we'll be focusing on the implementation and the test of the model on the board.
 
-## Model importation and implementation 
+## MODEL IMPORTATION AND IMPLEMENTATION 
 The first step is converting the NN model into an optimized code that can run on STM32 and implement it using the X-Cube-AI tool.
 
 After that we have a generated software code containing all the files and the fuctions that we need to use the NN model on our board.
@@ -174,7 +186,7 @@ This function is called in the while loop of the main.c file :
     /* USER CODE BEGIN 3 */
   }
 ```
-## STM32 serial communication
+## STM32 SERIAL COMMUNICATION
 After writing the code for executing our model on the board, now we need to give our model the input values and read the output prediction.
 
 To do that, we made a python script that gives the model via UART communication, one sample with all the features, and receive the prediction of all the classes.
@@ -239,8 +251,10 @@ if output[0][6] != 0:
     state = "stop"
 ```
 
-## Conclusion
+## CONCLUSION
+This project enabled us to learn how to drive a NN model and embed it on an STM32 board. It also enabled us to learn the principle of adversarial attacks and their consequences. 
 
+Unfortunately, the results that we had in the predictions weren't the results that we hoped for, but in general we succeeded in training the model, testing some adversarial attacks and their consequences, embed it in our board and write a python script to give the model input data and receive output data.
 
 
 
