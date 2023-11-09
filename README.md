@@ -211,7 +211,7 @@ ser = serial.Serial(
     ) 
 ```
 The script is following a basic state machine that can be discribed via this graph:
-![state_machine](https://github.com/statiqueplasma/emse_embedded_ai/assets/70385849/aae63f66-79d6-4eb0-a95a-bc492e5c9a4f)
+![state_machine](state_machine.png)
 
 In our example we will send all 12 features of the 1st sample (in the script we are using a dynamic parameter that selects the sample's id) : 
 
