@@ -1,3 +1,5 @@
+import sys
+
 import serial
 import numpy as np
 import time
@@ -61,12 +63,13 @@ def main():
                 ser.flush()
                 print("Program Starting ... \n")
                 # waiting for exit to exit or an id to send the sample from the test set
-                input_command = input('Enter "exit" to exit or an id between 0 and {} to predict the sample'.format(len(Y_data)-1))
-                if input_command == 'exit':
+                input_command = input('Enter "-1" to exit or an id between 0 and {} to predict the sample'.format(len(Y_data)-1))
+                input_command = int(input_command)
+                if input_command == -1:
                     ser.close()
                     sys.exit()
-                input_command = int(input_command)
-                elif imput_command < 0 or input_command > len(Y_data) - 1 :
+
+                elif input_command < 0 or input_command > len(Y_data) - 1:
                     print("The ID parameter should be between 0 and {}, Exiting now !".format(len(Y_data)-1))
                     ser.close()
                     sys.exit()
