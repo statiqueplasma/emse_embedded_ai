@@ -210,8 +210,10 @@ ser = serial.Serial(
         bytesize=serial.SEVENBITS
     ) 
 ```
+The script is following a basic state machine that can be discribed via this graph:
+![state_machine](https://github.com/statiqueplasma/emse_embedded_ai/assets/70385849/aae63f66-79d6-4eb0-a95a-bc492e5c9a4f)
 
-In our example we will send all 12 features of the 1st sample : 
+In our example we will send all 12 features of the 1st sample (in the script we are using a dynamic parameter that selects the sample's id) : 
 
 ```python
 printProgressBar(0, 12, prefix = 'Sending Data:', suffix = 'Complete', length = 50)
@@ -221,6 +223,8 @@ for i in range(len(X_data[0])):
     printProgressBar(i+1, 12, prefix = 'Sending Data:', suffix = 'Complete', length = 50)
 state = "receive"
 ```
+> [!NOTE]  
+> The `printProgressBar` is a function that print a progress bar showing the percentage of the features sent by the script 0% for 0  and 100% for all 12.
 
 Before receiving the prediction, we will make sure that we are synchronized between the PC and the board. For that the python script will wait to receive "010":
 
