@@ -1,3 +1,5 @@
+import sys
+
 import serial
 import numpy as np
 import time
@@ -46,7 +48,7 @@ fail_count = 0
 def main():
     ser = serial.Serial(
         # Prot used by your computer
-        port='/dev/ttyACM0',
+        port='COM12',
         baudrate=115200,
         parity=serial.PARITY_ODD,
         stopbits=serial.STOPBITS_TWO,
@@ -56,17 +58,31 @@ def main():
     try:
         while 1:
             out = ''
+            input_command = ''
             if state == "start":
-                print("Program Starting ... \n")
                 ser.flush()
-                state = "send"
+                print("Program Starting ... \n")
+                # waiting for exit to exit or an id to send the sample from the test set
+                input_command = input('Enter "-1" to exit or an id between 0 and {} to predict the sample'.format(len(Y_data)-1))
+                input_command = int(input_command)
+                if input_command == -1:
+                    ser.close()
+                    sys.exit()
+
+                elif input_command < 0 or input_command > len(Y_data) - 1:
+                    print("The ID parameter should be between 0 and {}, Exiting now !".format(len(Y_data)-1))
+                    ser.close()
+                    sys.exit()
+                else:
+                    
+                    state = "send"
             
             if state == "send":
                 
                 printProgressBar(0, 12, prefix = 'Sending Data:', suffix = 'Complete', length = 50)
-                for i in range(len(X_data[0])):
+                for i in range(len(X_data[input_command])):
                     out = ''
-                    ser.write((bytes(X_data[0][i])))
+                    ser.write((bytes(X_data[input_command][i])))
                     printProgressBar(i+1, 12, prefix = 'Sending Data:', suffix = 'Complete', length = 50)
                 state = "receive"
             
@@ -80,14 +96,14 @@ def main():
                     prediction = struct.unpack('f', ser.read(4))[0]
                     output[0][i] = prediction
                 if output[0][6] != 0:
-                    print("Expectation : ", Y_data[0])
+                    print("Expectation : ", Y_data[input_command])
                     print("Predictions : \n\n")
                     print("============================ \n")
                     output_display = output.round(decimals=4)
                     for i in range(7):
                         print("-> Label : {} | prediction : {}\n".format(i,output_display[0][i]))
                     print("============================ \n")
-                    state = "stop"
+                    state = "start"
             
 
     except KeyboardInterrupt:

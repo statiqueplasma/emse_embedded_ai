@@ -58,7 +58,7 @@
 #include "wine_quality_data.h"
 
 /* USER CODE BEGIN includes */
-extern UART_HandleTypeDef huart2;
+ extern UART_HandleTypeDef huart2;
 /* USER CODE END includes */
 
 /* IO buffers ----------------------------------------------------------------*/
@@ -172,27 +172,60 @@ static int ai_run(void)
 /* USER CODE BEGIN 2 */
 int acquire_and_process_data(ai_i8* data[])
 {
-  /* fill the inputs of the c-model
-  for (int idx=0; idx < AI_WINE_QUALITY_IN_NUM; idx++ )
-  {
-      data[idx] = ....
-  }
+
+ /* fill the inputs of the c-model */
+
+	uint8_t tmp[4] = {0}; //This buffer takes one feature at a time
+	int i,k;
+
+		#if _DEBUG
+		float input[12] = {0};
+		#endif
 
 
-  */
-  return 0;
+
+	  // Here we will receive all 12 feature of one sample
+	  for (i = 0; i < 12; i++){
+		  HAL_UART_Receive(&huart2, (uint8_t *) tmp, sizeof(tmp), 100);
+
+		#if _DEBUG
+		input[i] = *(float*) &tmp;
+		#endif
+
+	// Copy the received features in the "data" parameter
+		  for ( k = 0; k < 4; k++){
+			((uint8_t *) data)[(i*4)+k] = tmp[k];
+		  }
+	  }
+
+	  return 0;
 }
 
 int post_process(ai_i8* data[])
 {
-  /* process the predictions
-  for (int idx=0; idx < AI_WINE_QUALITY_OUT_NUM; idx++ )
-  {
-      data[idx] = ....
-  }
+/* process the predictions */
 
-  */
-  return 0;
+	  uint8_t *output = data; // put the "data parameter in a buffer"
+	  int i,j;
+
+	  // We wait for the synchronisation before sending the prediction
+	  char sync[3] = "010";
+	  HAL_UART_Transmit(&huart2, (uint8_t *) sync, sizeof(sync), 100);
+
+	  //We send the prediction of each class
+	  for(i=0; i<7; i++){
+		  char tmp[4] = {0};
+		  for (j=0; j < 4; j++){
+		  		  tmp[j] = output[4*i+j];
+		  	  }
+		  HAL_UART_Transmit(&huart2, (uint8_t *) tmp, sizeof(tmp), 100);
+	  }
+
+	#ifdef _DEBUG
+	  float predicted_quality = *(float*) &tmp;
+	  printf("Predicted quality: %f\n", predicted_quality)
+	#endif
+	  return 0;
 }
 /* USER CODE END 2 */
 
@@ -211,39 +244,35 @@ void MX_X_CUBE_AI_Process(void)
 {
     /* USER CODE BEGIN 6 */
   int res = -1;
-
+  uint8_t *in_data = NULL;
+  uint8_t *out_data = NULL;
   printf("TEMPLATE - run - main loop\r\n");
 
-  char test[] = "test 101";
-  char Rx[8];
+
+
   if (wine_quality) {
+  // set pointer on NN buffer
+	#if defined(AI_WINE_QUALITY_INPUTS_IN_ACTIVATIONS)
+	  in_data = ai_input[0].data;
+	#else
+	  in_data = in_data_s;
+	#endif
+
+	#if defined(AI_WINE_QUALITY_OUTPUTS_IN_ACTIVATIONS)
+	  out_data = ai_output[0].data;
+	#else
+	  out_data = out_data_s;
+	#endif
 
     do {
-
-    	HAL_UART_Transmit(&huart2, (uint8_t *) test, sizeof(test), 100);
-    	HAL_UART_Receive(&huart2, (uint8_t *) Rx, sizeof(Rx), 100);
-    HAL_UART_Transmit(&huart2, (uint8_t *) Rx, sizeof(Rx), 100);
-    if(Rx[0] == 'o' && Rx[1] == 'k'){
-    	char test2[] = "yes";
-    	HAL_UART_Transmit(&huart2, (uint8_t *) test2, sizeof(test2), 100);
-    }
-    else{
-    	for (int i =0; i < sizeof(Rx)/sizeof(uint8_t); i++){
-    		char received[] = "receivedData = ";
-    		received[-1] = Rx[i];
-    		HAL_UART_Transmit(&huart2, (uint8_t *) received, sizeof(received), 100);
-    		HAL_Delay(2000);
-    	}
-    	HAL_Delay(5000);
-    }
       /* 1 - acquire and pre-process input data */
-      res = acquire_and_process_data(data_ins);
+      res = acquire_and_process_data(in_data);
       /* 2 - process the data - call inference engine */
       if (res == 0)
         res = ai_run();
       /* 3- post-process the predictions */
       if (res == 0)
-        res = post_process(data_outs);
+        res = post_process(out_data);
     } while (res==0);
   }
 

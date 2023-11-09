@@ -3,13 +3,9 @@
     "c_layers": [
         {
             "next": "dense_12",
-            "rom": 6912,
             "op_by_type": {"smul_f32_f32": 1728},
             "c_forward": "forward_dense",
-            "c_code_emit": true,
             "macc": 1728,
-            "name": "dense_12_dense",
-            "c_id": 0,
             "tensors": {
                 "outputs": ["dense_12_dense_output"],
                 "inputs": ["input_0_output"],
@@ -19,46 +15,60 @@
                     "dense_12_dense_bias"
                 ]
             },
+            "layer_type": "dense",
+            "rom": 6912,
+            "c_code_emit": true,
+            "exec_time": {
+                "duration_ms": 0.003375000087544322,
+                "counters": [],
+                "percentage": 8.571428576708177,
+                "cycles_by_macc": 0,
+                "cycles": 0
+            },
+            "name": "dense_12_dense",
+            "c_id": 0,
             "weight_sparsity": [
                 0.01851851851851849,
                 1728,
                 32
             ],
-            "layer_type": "dense",
             "m_id": 0
         },
         {
             "next": "dense_13_dense",
-            "rom": 0,
             "op_by_type": {"op_f32_f32": 192},
             "c_forward": "forward_relu",
-            "c_code_emit": true,
             "macc": 192,
-            "name": "dense_12",
-            "c_id": 1,
             "tensors": {
                 "outputs": ["dense_12_output"],
                 "inputs": ["dense_12_dense_output"],
                 "scratchs": [],
                 "weights": []
             },
+            "layer_type": "nl",
+            "rom": 0,
+            "c_code_emit": true,
+            "exec_time": {
+                "duration_ms": 0.0020000000949949026,
+                "counters": [],
+                "percentage": 5.07936519199668,
+                "cycles_by_macc": 0,
+                "cycles": 0
+            },
+            "name": "dense_12",
+            "c_id": 1,
             "weight_sparsity": [
                 0,
                 1,
                 0
             ],
-            "layer_type": "nl",
             "m_id": 0
         },
         {
             "next": "dense_13",
-            "rom": 74112,
             "op_by_type": {"smul_f32_f32": 18528},
             "c_forward": "forward_dense",
-            "c_code_emit": true,
             "macc": 18528,
-            "name": "dense_13_dense",
-            "c_id": 2,
             "tensors": {
                 "outputs": ["dense_13_dense_output"],
                 "inputs": ["dense_12_output"],
@@ -68,46 +78,60 @@
                     "dense_13_dense_bias"
                 ]
             },
+            "layer_type": "dense",
+            "rom": 74112,
+            "c_code_emit": true,
+            "exec_time": {
+                "duration_ms": 0.02500000037252903,
+                "counters": [],
+                "percentage": 63.492062830352836,
+                "cycles_by_macc": 0,
+                "cycles": 0
+            },
+            "name": "dense_13_dense",
+            "c_id": 2,
             "weight_sparsity": [
                 6.476683937823857E-4,
                 18528,
                 12
             ],
-            "layer_type": "dense",
             "m_id": 1
         },
         {
             "next": "dense_14_dense",
-            "rom": 0,
             "op_by_type": {"op_f32_f32": 96},
             "c_forward": "forward_relu",
-            "c_code_emit": true,
             "macc": 96,
-            "name": "dense_13",
-            "c_id": 3,
             "tensors": {
                 "outputs": ["dense_13_output"],
                 "inputs": ["dense_13_dense_output"],
                 "scratchs": [],
                 "weights": []
             },
+            "layer_type": "nl",
+            "rom": 0,
+            "c_code_emit": true,
+            "exec_time": {
+                "duration_ms": 0.0010000000474974513,
+                "counters": [],
+                "percentage": 2.53968259599834,
+                "cycles_by_macc": 0,
+                "cycles": 0
+            },
+            "name": "dense_13",
+            "c_id": 3,
             "weight_sparsity": [
                 0,
                 1,
                 0
             ],
-            "layer_type": "nl",
             "m_id": 1
         },
         {
             "next": "dense_14",
-            "rom": 12416,
             "op_by_type": {"smul_f32_f32": 3104},
             "c_forward": "forward_dense",
-            "c_code_emit": true,
             "macc": 3104,
-            "name": "dense_14_dense",
-            "c_id": 4,
             "tensors": {
                 "outputs": ["dense_14_dense_output"],
                 "inputs": ["dense_13_output"],
@@ -117,46 +141,60 @@
                     "dense_14_dense_bias"
                 ]
             },
+            "layer_type": "dense",
+            "rom": 12416,
+            "c_code_emit": true,
+            "exec_time": {
+                "duration_ms": 0.004125000210478902,
+                "counters": [],
+                "percentage": 10.476190745450397,
+                "cycles_by_macc": 0,
+                "cycles": 0
+            },
+            "name": "dense_14_dense",
+            "c_id": 4,
             "weight_sparsity": [
                 9.664948453608213E-4,
                 3104,
                 3
             ],
-            "layer_type": "dense",
             "m_id": 2
         },
         {
             "next": "dense_15_dense",
-            "rom": 0,
             "op_by_type": {"op_f32_f32": 32},
             "c_forward": "forward_relu",
-            "c_code_emit": true,
             "macc": 32,
-            "name": "dense_14",
-            "c_id": 5,
             "tensors": {
                 "outputs": ["dense_14_output"],
                 "inputs": ["dense_14_dense_output"],
                 "scratchs": [],
                 "weights": []
             },
+            "layer_type": "nl",
+            "rom": 0,
+            "c_code_emit": true,
+            "exec_time": {
+                "duration_ms": 0.0010000000474974513,
+                "counters": [],
+                "percentage": 2.53968259599834,
+                "cycles_by_macc": 0,
+                "cycles": 0
+            },
+            "name": "dense_14",
+            "c_id": 5,
             "weight_sparsity": [
                 0,
                 1,
                 0
             ],
-            "layer_type": "nl",
             "m_id": 2
         },
         {
             "next": "activation_3",
-            "rom": 924,
             "op_by_type": {"smul_f32_f32": 231},
             "c_forward": "forward_dense",
-            "c_code_emit": true,
             "macc": 231,
-            "name": "dense_15_dense",
-            "c_id": 6,
             "tensors": {
                 "outputs": ["dense_15_dense_output"],
                 "inputs": ["dense_14_output"],
@@ -166,35 +204,53 @@
                     "dense_15_dense_bias"
                 ]
             },
+            "layer_type": "dense",
+            "rom": 924,
+            "c_code_emit": true,
+            "exec_time": {
+                "duration_ms": 0.0011250000534346327,
+                "counters": [],
+                "percentage": 2.857142920498133,
+                "cycles_by_macc": 0,
+                "cycles": 0
+            },
+            "name": "dense_15_dense",
+            "c_id": 6,
             "weight_sparsity": [
                 0,
                 231,
                 0
             ],
-            "layer_type": "dense",
             "m_id": 3
         },
         {
             "next": "activation_3",
-            "rom": 0,
             "op_by_type": {"op_f32_f32": 105},
             "c_forward": "forward_sm",
-            "c_code_emit": true,
             "macc": 105,
-            "name": "activation_3",
-            "c_id": 7,
             "tensors": {
                 "outputs": ["activation_3_output"],
                 "inputs": ["dense_15_dense_output"],
                 "scratchs": [],
                 "weights": []
             },
+            "layer_type": "nl",
+            "rom": 0,
+            "c_code_emit": true,
+            "exec_time": {
+                "duration_ms": 0.0017500000831205398,
+                "counters": [],
+                "percentage": 4.444444542997095,
+                "cycles_by_macc": 0,
+                "cycles": 0
+            },
+            "name": "activation_3",
+            "c_id": 7,
             "weight_sparsity": [
                 0,
                 1,
                 0
             ],
-            "layer_type": "nl",
             "m_id": 4
         }
     ],
@@ -606,7 +662,7 @@
         }
     ],
     "c_activations_count": 1,
-    "date_time": "Mon Sep 25 11:03:48 2023",
+    "date_time": "Sun Oct  1 18:07:15 2023",
     "model_name": "wine_quality_nn",
     "tool_version": {
         "major": 1,
@@ -624,10 +680,8 @@
     "c_weights_count": 1,
     "weights": {"weights_array": {
         "buffer_data_size": 94364,
-        "buffer_crc": 0,
         "pool_size": 94364,
-        "buffer_c_type": "u64",
-        "buffer_c_name": "s_wine_quality_weights_array_u64",
+        "buffer_c_name": "NULL",
         "buffer_offsets": [
             {
                 "lite_tag": null,
@@ -686,10 +740,8 @@
                 "buffer_name": "dense_14_dense_weights_array"
             }
         ],
-        "buffer_c_name_addr": "s_wine_quality_weights_array_u64",
-        "buffer_c_count": 11796,
-        "pool_id": 0,
-        "buffer_c_data": []
+        "buffer_c_name_addr": "NULL",
+        "pool_id": 0
     }},
     "memory_footprint": {
         "kernel_ram": 2480,
@@ -782,6 +834,12 @@
         "buffer_c_name_addr": "NULL",
         "pool_id": 0
     }},
+    "exec_time": {
+        "duration_ms": 0.03937500099709723,
+        "cycles_by_macc": 0,
+        "cycles": 0,
+        "device": "AMD64 Intel64 Family 6 Model 94 Stepping 3, GenuineIntel (Windows)"
+    },
     "c_arrays_n": 17,
     "c_name": "wine_quality",
     "memory_pools": []
