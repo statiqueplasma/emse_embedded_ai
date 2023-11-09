@@ -1,7 +1,7 @@
 import serial
 import numpy as np
 import time
-
+import sys
 
 # Print iterations progress
 def printProgressBar(iteration, total, prefix='', suffix='', decimals=1, length=100, fill='█', printEnd="\r"):
@@ -55,16 +55,27 @@ def main():
     try:
         while 1:
             out = ''
+            input_command = ''
             if state == "start":
                 print("Program Starting ... \n")
-                state = "send"
+                # waiting for exit to exit or an id to send the sample from the test set
+                input_command input('Enter "exit" to exit or an id between 0 and {} to predict the sample'.format(len(Y_data)-1))
+                if input_command == 'exit':
+                    ser.close()
+                    sys.exit()
+                elif imput_command < 0 or input_command > len(Y_data) - 1 :
+                    print("The ID parameter should be between 0 and {}, Exiting now !".format(len(Y_data)-1))
+                    ser.close()
+                    sys.exit()
+                else:
+                    state = "send"
 
             if state == "send":
 
                 printProgressBar(0, 12, prefix='Sending Data:', suffix='Complete', length=50)
-                for i in range(len(X_data[0])):
+                for i in range(len(X_data[input_command])):
                     out = ''
-                    ser.write((bytes(X_data[0][i])))
+                    ser.write((bytes(X_data[input_command][i])))
                     printProgressBar(i + 1, 12, prefix='Sending Data:', suffix='Complete', length=50)
                 state = "receive"
 
@@ -75,11 +86,11 @@ def main():
                     out = ser.read(4).decode()
                 if out != '':
                     print("Received = ", out)
-                    if out == Y_data[0]:
+                    if out == Y_data[input_command]:
                         print("YES\n")
                     else:
-                        print("Expected = ", Y_data[0])
-                    state = "stop"
+                        print("Expected = ", Y_data[input_command])
+                    state = "start"
 
 
     except KeyboardInterrupt:
