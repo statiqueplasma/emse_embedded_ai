@@ -606,7 +606,7 @@
         }
     ],
     "c_activations_count": 1,
-    "date_time": "Wed Nov  8 22:27:42 2023",
+    "date_time": "Thu Nov  9 11:11:19 2023",
     "model_name": "wine_quality",
     "tool_version": {
         "major": 1,
@@ -698,9 +698,12 @@
             0,
             0
         ],
-        "series": "generic",
+        "series": "stm32l4",
         "activations": 720,
-        "weights": 43468
+        "toolchain_flash": 1444,
+        "toolchain_ram": 12,
+        "weights": 43468,
+        "toolchain": "arm-none-eabi-gcc (GNU Tools for STM32 11.3.rel1.20230912-1600) 11.3.1 20220712"
     },
     "version": "1.2",
     "tool_api_version": {

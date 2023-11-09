@@ -1,7 +1,7 @@
 {
     "_allocate_inputs": 4,
     "_allocate_outputs": 4,
-    "cli_parameters": "generate --name wine_quality -m D:/WALID/EMSE ETUDES/SEMESTRE 9 2023/Embedded AI/Wine_Prediction_Project/emse_embedded_ai/wine_quality.h5 --type keras --compression none --verbosity 1 --workspace C:\\Users\\walid\\AppData\\Local\\Temp\\mxAI_workspace900581883652006126299944991076298 --output C:\\Users\\walid\\.stm32cubemx\\wine_quality_output --allocate-inputs --series stm32l4 --allocate-outputs",
+    "cli_parameters": "analyze --name wine_quality -m D:/WALID/EMSE ETUDES/SEMESTRE 9 2023/Embedded AI/Wine_Prediction_Project/emse_embedded_ai/wine_quality.h5 --type keras --compression none --verbosity 1 --workspace C:\\Users\\walid\\AppData\\Local\\Temp\\mxAI_workspace1358239058547995430825463241806541 --output C:\\Users\\walid\\.stm32cubemx\\wine_quality_output --allocate-inputs --series stm32l4 --allocate-outputs",
     "cli_version": {
         "major": 1,
         "micro": 0,
@@ -13,10 +13,10 @@
         "factor": null,
         "layers": {}
     },
-    "date_time": "Wed Nov  8 22:27:42 2023",
+    "date_time": "Thu Nov  9 11:11:19 2023",
     "error": 0,
     "error_str": [],
-    "exec_cmd": "generate",
+    "exec_cmd": "analyze",
     "exec_duration": 0.0,
     "hash": "722ca9d13779ab1f8217a1164b2ea102",
     "inputs": [

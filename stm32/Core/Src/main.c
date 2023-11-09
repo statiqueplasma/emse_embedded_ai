@@ -133,7 +133,6 @@ int main(void)
 
   MX_X_CUBE_AI_Process();
     /* USER CODE BEGIN 3 */
-  MX_X_CUBE_AI_Process();
   }
   /* USER CODE END 3 */
 }

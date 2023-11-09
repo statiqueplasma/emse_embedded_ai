@@ -172,15 +172,19 @@ static int ai_run(void)
 /* USER CODE BEGIN 2 */
 int acquire_and_process_data(ai_i8* data[])
 {
+
  /* fill the inputs of the c-model */
-	uint8_t tmp[4] = {0};
+
+	uint8_t tmp[4] = {0}; //This buffer takes one feature at a time
+	int i,k;
+
+		#if _DEBUG
+		float input[12] = {0};
+		#endif
 
 
-	#if _DEBUG
-	float input[12] = {0}; // Stocker les valeurs d'entrée en mode Debug
-	#endif
 
-	  int i,k;
+	  // Here we will receive all 12 feature of one sample
 	  for (i = 0; i < 12; i++){
 		  HAL_UART_Receive(&huart2, (uint8_t *) tmp, sizeof(tmp), 100);
 
@@ -188,25 +192,11 @@ int acquire_and_process_data(ai_i8* data[])
 		input[i] = *(float*) &tmp;
 		#endif
 
-	// Copier les bytes reçus dans le tableau de données
+	// Copy the received features in the "data" parameter
 		  for ( k = 0; k < 4; k++){
 			((uint8_t *) data)[(i*4)+k] = tmp[k];
 		  }
 	  }
-
-
-//	#if _DEBUG
-//
-//	  // Transmettre à nouveau les valeurs reçues en mode debug
-//	for(i = 0; i < 12; i++){
-//		float value = input[i];
-//		for (k = 0; k < 4 ; k++){
-//		   tmp[k] = ((uint8_t *) &value)[k];
-//		}
-//		HAL_UART_Transmit(&huart2, (uint8_t *) tmp, sizeof(tmp), 100);
-//	}
-//
-//	#endif
 
 	  return 0;
 }
@@ -214,16 +204,19 @@ int acquire_and_process_data(ai_i8* data[])
 int post_process(ai_i8* data[])
 {
 /* process the predictions */
-	  uint8_t *output = data; // don't care about the signed value of ai_i8...
+
+	  uint8_t *output = data; // put the "data parameter in a buffer"
 	  int i,j;
 
-	  char test[4];
+	  // We wait for the synchronisation before sending the prediction
 	  char sync[3] = "010";
 	  HAL_UART_Transmit(&huart2, (uint8_t *) sync, sizeof(sync), 100);
+
+	  //We send the prediction of each class
 	  for(i=0; i<7; i++){
 		  char tmp[4] = {0};
 		  for (j=0; j < 4; j++){
-		  		  tmp[j] = output[i*4+j];
+		  		  tmp[j] = output[4*i+j];
 		  	  }
 		  HAL_UART_Transmit(&huart2, (uint8_t *) tmp, sizeof(tmp), 100);
 	  }
@@ -273,13 +266,13 @@ void MX_X_CUBE_AI_Process(void)
 
     do {
       /* 1 - acquire and pre-process input data */
-      res = acquire_and_process_data(data_ins);
+      res = acquire_and_process_data(in_data);
       /* 2 - process the data - call inference engine */
       if (res == 0)
         res = ai_run();
       /* 3- post-process the predictions */
       if (res == 0)
-        res = post_process(data_outs);
+        res = post_process(out_data);
     } while (res==0);
   }
 
